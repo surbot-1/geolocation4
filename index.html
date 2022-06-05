@@ -71,10 +71,6 @@
     var variable1 = document.getElementById("demo1"); 
     var variable2 = document.getElementById("demo2"); 
     
-    variable2.innerHTML =
-      "We respect our client's privacy" + "<br>" + 
-      "We do not store or share client's information" ; 
-    
     function getlocation() {
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
     }
@@ -84,7 +80,10 @@
         "Latitude: " +
         pos.coords.latitude +
         "<br>Longitude: " +
-        pos.coords.longitude;
+        pos.coords.longitude; 
+      variable2.innerHTML = 
+        "We respect our client's privacy" + 
+        "<br>We do not store or share client's information"; 
     }
  
     function errHand(err) {
