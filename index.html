@@ -14,6 +14,12 @@
       padding: 0px;
     }
     
+    p {
+      color: #000000;
+      font-size: 20px;
+      margin-left: 20px;
+    } 
+    
     .div1 {
       font-size: 40px;
       font-weight: bold;
@@ -24,12 +30,6 @@
     
     .button1 { 
       font-size: 20px; 
-      margin-left: 20px;
-    }
- 
-    p {
-      color: #000000;
-      font-size: 20px;
       margin-left: 20px;
     }
     
@@ -72,8 +72,8 @@
     var variable2 = document.getElementById("demo2"); 
     
     variable2.innerHTML =
-      "We respect our client's privacy" +
-      "<br>We do not store or share client's information" ; 
+      "We respect our client's privacy" + "<br>" + 
+      "We do not store or share client's information" ; 
     
     function getlocation() {
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
