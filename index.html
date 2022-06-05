@@ -36,6 +36,13 @@
       color: #0000AA;
       font-size: 20px;
       margin-left: 20px;
+    } 
+    
+    .p2 {
+      color: #AA0000;
+      font-size: 10px;
+      margin-top: 200px;
+      margin-left: 20px;
     }
 
   </style>
@@ -56,10 +63,17 @@
   </button>
 
   <p class="p1" id="demo1"></p>
+  <p class="p2" id="demo2"></p>
  
   <script>
 
-    var variable1 = document.getElementById("demo1");
+    var variable1 = document.getElementById("demo1"); 
+    var variable2 = document.getElementById("demo2"); 
+    
+    variable2.innerHTML =
+      "We respect our client's privacy" +
+      "<br>We do not store or share client's information" ; 
+    
     function getlocation() {
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
     }
