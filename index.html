@@ -49,7 +49,7 @@
     .p4 {
       color: #AA0000;
       font-size: 10px;
-      margin-top: 150px;
+      margin-top: 100px;
       margin-left: 20px;
     }
 
@@ -74,11 +74,15 @@
 
   <p class="p2" id="demo2"></p>
   <p class="p3" id="demo3">
-    <input type="text" class="input" id="ctopno" placeholder="CTOPUP No."> 
-    <input type="text" class="input" id="altno" placeholder="Alternate No.">
-    <input type="text" class="input" id="retname" placeholder="Retailer Name">
-    <input type="text" class="input" id="shopname" placeholder="Shop Name">
-    <input type="text" class="input" id="address" placeholder="Address">
+    <input type="text" class="input" id="ctopno" placeholder="CTOPUP No."> <br>
+    <input type="text" class="input" id="altno" placeholder="Alternate No."> <br>
+    <input type="text" class="input" id="retname" placeholder="Retailer Name"> <br>
+    <input type="text" class="input" id="shopname" placeholder="Shop Name"> <br>
+    <input type="text" class="input" id="shopno" placeholder="Shop No."> <br>
+    <input type="text" class="input" id="street" placeholder="Street"> <br>
+    <input type="text" class="input" id="city" placeholder="City/District"> <br>
+    <input type="text" class="input" id="state" placeholder="State"> <br>
+    <input type="text" class="input" id="pincode" placeholder="PIN Code"> 
     <input type="button" class="input" id="input" value="Ok" onclick="input()">
   </p>
   <p class="p4" id="demo4"></p>
@@ -138,7 +142,11 @@
       var altno = document.getElementById("altno").value; 
       var retname = document.getElementById("retname").value; 
       var shopname = document.getElementById("shopname").value; 
-      var address = document.getElementById("address").value; 
+      var shopno = document.getElementById("shopno").value; 
+      var street = document.getElementById("street").value; 
+      var city = document.getElementById("city").value; 
+      var state = document.getElementById("state").value; 
+      var pincode = document.getElementById("pincode").value; 
       
       variable3.innerHTML ="";
       variable3.innerHTML =
@@ -146,7 +154,12 @@
         "Alternate no: " + altno + "<br>" +
         "Retailer name: " + retname + "<br>" +
         "Shop name: " + shopname + "<br>" +
-        "Address: " + "<br>" + address ;
+        "Address: " + "<br>" +
+        "Shop no: " + shopno + "<br>" +
+        "Street: " + street + "<br>" +
+        "City/District: " + city + "<br>" +
+        "State: " + state + "<br>" +
+        "PIN code: " + pincode ;
     }
 
   </script>
