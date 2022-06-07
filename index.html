@@ -78,7 +78,9 @@
   </button>
 
   <p class="p2" id="demo2"></p>
-  <p class="p3" id="demo3">
+  <p class="p3" id="demo3"> 
+    <input type="text" class="input" id="franchise" placeholder="Franchise Name and Code"> <br>
+    <input type="text" class="input" id="fos" placeholder="FOS Name and Code"> <br>
     <input type="text" class="input" id="ctopno" placeholder="CTOPUP No."> <br>
     <input type="text" class="input" id="altno" placeholder="Alternate No."> <br>
     <input type="text" class="input" id="retname" placeholder="Retailer Name"> <br>
@@ -90,6 +92,7 @@
     <input type="text" class="input" id="city" placeholder="City/District"> <br>
     <input type="text" class="input" id="state" placeholder="State"> <br>
     <input type="text" class="input" id="pincode" placeholder="PIN Code"> 
+    <input type="text" class="input" id="visitedby" placeholder="Visited By"> 
    <!- <input type="button" class="input" id="input" value="Ok" onclick="input()"> <!-
   </p>
   <p class="p4" id="demo4"></p>
@@ -142,6 +145,8 @@
     } 
     
     function input() {
+      var franchise = document.getElementById("franchise").value; 
+      var fos = document.getElementById("fos").value; 
       var ctopno = document.getElementById("ctopno").value; 
       var altno = document.getElementById("altno").value; 
       var retname = document.getElementById("retname").value; 
@@ -153,21 +158,27 @@
       var city = document.getElementById("city").value; 
       var state = document.getElementById("state").value; 
       var pincode = document.getElementById("pincode").value; 
+      var visitedby = document.getElementById("visitedby").value; 
       
       variable3.innerHTML ="";
       variable3.innerHTML =
+        "Franchise : " + franchise + "<br>" +
+        "FOS : " + fos + "<br>" + 
+        "<br>" +
         "CTOPUP No : " + ctopno + "<br>" +
         "Alternate No : " + altno + "<br>" +
         "Retailer Name : " + retname + "<br>" +
-        "Shop Name : " + shopname + "<br>" + "<br>" +
-        "Address : " + "<br>" +
+        "Shop Name : " + shopname + "<br>" + 
+        "<br>" +
         "Shop No : " + shopno + "<br>" +
         "Street/Village : " + street + "<br>" +
         "Landmark : " + landmark + "<br>" +
         "Locality/Tehsil : " + locality + "<br>" +
         "City/District : " + city + "<br>" +
         "State : " + state + "<br>" +
-        "PIN Code : " + pincode ;
+        "PIN Code : " + pincode + "<br>" +
+        "<br>" +
+        "Visited By : " + visitedby ;
     } 
     
     variable4.innerHTML = 
