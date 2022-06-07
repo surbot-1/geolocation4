@@ -73,7 +73,15 @@
   </button>
 
   <p class="p2" id="demo2"></p>
-  <p class="p3" id="demo3"></p>
+  <p class="p3" id="demo3">
+    <input type="text" class="input" id="ctopno" placeholder="CTOPUP No."> 
+    <input type="text" class="input" id="altno" placeholder="Alternate No.">
+    <input type="text" class="input" id="retname" placeholder="Retailer Name">
+    <input type="text" class="input" id="shopname" placeholder="Shop Name">
+    <input type="text" class="input" id="address" placeholder="Address">
+    <input type="button" class="input" id="input" value="Ok" onclick="input()">
+    <input type="button" value="Click me" onclick="msg()">
+  </p>
   <p class="p4" id="demo4"></p>
  
   <script>
@@ -124,12 +132,33 @@
 
       }
 
+    } 
+    
+    function input() {
+      var ctopno = document.getElementById("ctopno").value; 
+      var altno = document.getElementById("altno").value; 
+      var retname = document.getElementById("retname").value; 
+      var shopname = document.getElementById("shopname").value; 
+      var address = document.getElementById("address").value; 
+      
+      variable3.innerHTML ="";
+      variable3.innerHTML =
+        "CTOPUP no: "+ ctopno + "<br>" +
+        "alternate no: "+ altno + "<br>" +
+        "Retailer name: "+ retname + "<br>" +
+        "Shop name: "+ shopname + "<br>" +
+        "Address: "+ address + "<br>" ;
     }
 
   </script>
 
 </body>
 </html>
+
+
+
+
+
 
 
 
