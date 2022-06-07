@@ -14,7 +14,7 @@
       padding: 0px;
     }
     
-    .p0 {
+    .p1 {
       color: #000000;
       font-size: 20px;
       margin-left: 20px;
@@ -33,13 +33,20 @@
       margin-left: 20px;
     }
     
-    .p1 {
+    .p2 {
       color: #0000AA;
       font-size: 20px; 
       margin-left: 20px;
     } 
     
-    .p2 {
+    
+    .p3 {
+      color: #000000;
+      font-size: 20px; 
+      margin-left: 20px;
+    } 
+    
+    .p4 {
       color: #AA0000;
       font-size: 10px;
       margin-top: 240px;
@@ -55,7 +62,7 @@
 
   <div class="div1">editApp-GeoLite</div>
  
-  <p class="p0"> 
+  <p class="p1"> 
    Get Geolocation Latitude and Longitude <br>
    Accuracy depends on device <br>
    Recommended device - Apple's iPhone
@@ -65,25 +72,27 @@
     Click to get coordinates
   </button>
 
-  <p class="p1" id="demo1"></p>
   <p class="p2" id="demo2"></p>
+  <p class="p3" id="demo3"></p>
+  <p class="p4" id="demo4"></p>
  
   <script>
 
-    var variable1 = document.getElementById("demo1"); 
     var variable2 = document.getElementById("demo2"); 
+    var variable3 = document.getElementById("demo3"); 
+    var variable4 = document.getElementById("demo4"); 
     
     function getlocation() {
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
     }
 
     function showLoc(pos) {
-      variable1.innerHTML =
+      variable2.innerHTML =
         "Latitude: " +
         pos.coords.latitude +
         "<br>Longitude: " +
         pos.coords.longitude; 
-      variable2.innerHTML = 
+      variable4.innerHTML = 
         "We respect our client's privacy" + 
         "<br>We do not store or share client's information"; 
     }
