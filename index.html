@@ -84,7 +84,9 @@
     <input type="text" class="input" id="retname" placeholder="Retailer Name"> <br>
     <input type="text" class="input" id="shopname" placeholder="Shop Name"> <br>
     <input type="text" class="input" id="shopno" placeholder="Shop No."> <br>
-    <input type="text" class="input" id="street" placeholder="Street"> <br>
+    <input type="text" class="input" id="street" placeholder="Street/Village"> <br>
+    <input type="text" class="input" id="landmark" placeholder="Landmark"> <br>
+    <input type="text" class="input" id="locality" placeholder="Locality/Tehsil"> <br>
     <input type="text" class="input" id="city" placeholder="City/District"> <br>
     <input type="text" class="input" id="state" placeholder="State"> <br>
     <input type="text" class="input" id="pincode" placeholder="PIN Code"> 
@@ -146,6 +148,8 @@
       var shopname = document.getElementById("shopname").value; 
       var shopno = document.getElementById("shopno").value; 
       var street = document.getElementById("street").value; 
+      var landmark = document.getElementById("landmark").value;
+      var locality = document.getElementById("locality").value
       var city = document.getElementById("city").value; 
       var state = document.getElementById("state").value; 
       var pincode = document.getElementById("pincode").value; 
@@ -158,7 +162,9 @@
         "Shop Name: " + shopname + "<br>" + "<br>" +
         "Address: " + "<br>" +
         "Shop No: " + shopno + "<br>" +
-        "Street: " + street + "<br>" +
+        "Street/Village: " + street + "<br>" +
+        "Landmark: " + landmark + "<br>" +
+        "Locality/Tehsil: " + locality + "<br>" +
         "City/District: " + city + "<br>" +
         "State: " + state + "<br>" +
         "PIN Code: " + pincode ;
