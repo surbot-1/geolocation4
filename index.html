@@ -273,10 +273,10 @@
            visitedby: visitedby
        }); 
        request.onsuccess = function(event) {
-         alert("Saved"); 
+         alert(ctopno + " " + "saved successfully"); 
        };  
        request.onerror = function(event) {
-          alert("Already exist");
+          alert(ctopno + " " + "already exist");
        }; 
     }
     
