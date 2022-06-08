@@ -89,6 +89,7 @@
     <input type="text" class="input" id="altno" placeholder="Alternate No."> <br>
     <input type="text" class="input" id="emailid" placeholder="Email ID"> <br>
     <input type="text" class="input" id="retname" placeholder="Retailer Name"> <br>
+    <input type="text" class="input" id="retgend" placeholder="Gender"> <br>
     <input type="text" class="input" id="shopname" placeholder="Shop Name"> <br>
     <br>
     <input type="text" class="input" id="shopno" placeholder="Shop No."> <br>
@@ -143,6 +144,7 @@
     var altno; 
     var emailid; 
     var retname; 
+    var retgend; 
     var shopname; 
     var shopno; 
     var street; 
@@ -206,6 +208,7 @@
       altno = document.getElementById("altno").value; 
       emailid = document.getElementById("emailid").value; 
       retname = document.getElementById("retname").value; 
+      retgend = document.getElementById("retgend").value; 
       shopname = document.getElementById("shopname").value; 
       shopno = document.getElementById("shopno").value; 
       street = document.getElementById("street").value; 
@@ -225,6 +228,7 @@
         "Alternate No    : " + altno + "<br>" +
         "Email ID        : " + emailid + "<br>" +
         "Retailer Name   : " + retname + "<br>" +
+        "Gender          : " + retgend + "<br>" +
         "Shop Name       : " + shopname + "<br>" + 
         "<br>" +
         "Shop No         : " + shopno + "<br>" +
@@ -247,7 +251,8 @@
            ctopno: ctopno, 
            altno: altno, 
            emailid: emailid, 
-           retname: retname, 
+           retname: retname,
+           retgend: retgend,
            shopname: shopname, 
            shopno: shopno, 
            street: street, 
@@ -280,6 +285,7 @@
                   var altno = request.result.altno;  
                   var emailid = request.result.emailid; 
                   var retname = request.result.retname;  
+                  var retgend = request.result.retgend;  
                   var shopname = request.result.shopname; 
                   var shopno = request.result.shopno; 
                   var street = request.result.street;  
