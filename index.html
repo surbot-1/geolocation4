@@ -138,6 +138,8 @@
  
   <script> 
     
+    var lat; 
+    var lng; 
     var franchise; 
     var fos; 
     var ctopno; 
@@ -170,6 +172,8 @@
         "<br>" + 
         "Longitude : " +
         pos.coords.longitude; 
+      lat = pos.coords.latitude ;
+      lng = pos.coords.longitude ;
     }
  
     function errHand(err) {
@@ -246,6 +250,8 @@
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
+           lat: lat, 
+           lng: lng, 
            franchise: franchise, 
            fos: fos, 
            ctopno: ctopno, 
