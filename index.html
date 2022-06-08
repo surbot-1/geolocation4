@@ -381,7 +381,7 @@
         previewready = false; 
         cordsreadready = false; 
         saveready = true; 
-        readready = true; 
+        readready = false; 
         removeready = false; 
             var toremove = document.getElementById("ctopno").value;
             var request = db.transaction(["posbsnl"], "readwrite")
@@ -389,6 +389,8 @@
             .delete(toremove);
             
             request.onsuccess = function(event) { 
+               variable2.innerHTML = ""; 
+               variable3.innerHTML = ""; 
                alert(toremove + " " + "has been removed successfully");
             }; 
             request.onerror = function(event) {
