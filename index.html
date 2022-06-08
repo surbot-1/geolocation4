@@ -345,6 +345,7 @@
     }
     
     function remove() {
+            read(); 
             var toremove = document.getElementById("ctopno").value;
             var request = db.transaction(["posbsnl"], "readwrite")
             .objectStore("posbsnl")
