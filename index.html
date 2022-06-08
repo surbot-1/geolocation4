@@ -120,7 +120,8 @@
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
          } // else { alert('Ok'); }
-         var db;
+         var db; 
+         var objectStore; 
          var request = window.indexedDB.open("newDatabase", 1); 
          request.onerror = function(event) {
             alert("error: ");
@@ -131,15 +132,15 @@
          }; 
          request.onupgradeneeded = function(event) {
             db = event.target.result;
-            var objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopno"}); 
+            objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopno"}); 
          } 
     
   </script>
  
   <script> 
     
-    var lat; 
-    var lng; 
+    var latitude; 
+    var longitude; 
     var franchise; 
     var fos; 
     var ctopno; 
@@ -172,8 +173,8 @@
         "<br>" + 
         "Longitude : " +
         pos.coords.longitude; 
-      lat = pos.coords.latitude ;
-      lng = pos.coords.longitude ;
+      latitude = pos.coords.latitude ;
+      longitude = pos.coords.longitude ;
     }
  
     function errHand(err) {
@@ -205,7 +206,9 @@
 
     } 
     
-    function preview() {
+    function preview() { 
+      // latitude; 
+      // longitude;
       franchise = document.getElementById("franchise").value; 
       fos = document.getElementById("fos").value; 
       ctopno = document.getElementById("ctopno").value; 
