@@ -288,6 +288,8 @@
        request.onsuccess = function(event) {
                // Do something with the request.result!
                if(request.result) { 
+                  var latitude = request.result.latitude; 
+                  var longitude = request.result.longitude; 
                   var franchise = request.result.franchise; 
                   var fos = request.result.fos; 
                   var ctopno = request.result.ctopno;  
