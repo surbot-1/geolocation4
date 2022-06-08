@@ -80,7 +80,7 @@
     Read
   </button> 
   <button class="button1" onclick="remove()">
-    Remove
+    Delete
   </button> 
   
   <p class="p2" id="demo2"></p>
@@ -252,7 +252,7 @@
         "Visited By : " + visitedby ;
     } 
     
-    function save() { alert("save");
+    function save() { 
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
@@ -351,7 +351,7 @@
             .delete(toremove);
             
             request.onsuccess = function(event) {
-               alert(toremove + " " + "has been removed");
+               alert(toremove + " " + "has been removed successfully");
             }; 
             request.onerror = function(event) {
                alert("Unable to remove!"); 
