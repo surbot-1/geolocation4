@@ -342,7 +342,17 @@
     }
     
     function remove() {
-      
+            var toremove = document.getElementById("ctopno").value;
+            var request = db.transaction(["posbsnl"], "readwrite")
+            .objectStore("posbsnl")
+            .delete(toremove);
+            
+            request.onsuccess = function(event) {
+               alert(toremove + " " + "has been removed");
+            }; 
+            request.onerror = function(event) {
+               alert("Unable to remove!"); 
+            };
     }
     
     variable4.innerHTML = 
