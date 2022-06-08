@@ -388,7 +388,7 @@
             .objectStore("posbsnl")
             .delete(toremove);
             
-            request.onsuccess = function(event) {
+            request.onsuccess = function(event) { 
                alert(toremove + " " + "has been removed successfully");
             }; 
             request.onerror = function(event) {
