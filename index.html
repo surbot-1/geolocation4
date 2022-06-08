@@ -249,7 +249,7 @@
         "Visited By : " + visitedby ;
     } 
     
-    function save() {
+    function save() { alert("save");
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
