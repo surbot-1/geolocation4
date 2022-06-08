@@ -119,20 +119,20 @@
          
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
-         } // else { alert('Ok'); }
+         }  else { alert('Ok'); }
          var db; 
          var objectStore; 
-         var request = window.indexedDB.open("newDatabase", 1); 
+         var request = window.indexedDB.open("posbsnldb", 1); 
          request.onerror = function(event) {
             alert("error: ");
          }; 
          request.onsuccess = function(event) {
             db = request.result;
-           // alert("success: "+ db);
+            alert("success: "+ db);
          }; 
          request.onupgradeneeded = function(event) {
-            db = event.target.result;
-            objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopno"}); 
+            var db = event.target.result;
+            var objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopno"}); 
          } 
     
   </script>
