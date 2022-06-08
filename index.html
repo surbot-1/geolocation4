@@ -239,10 +239,38 @@
     } 
     
     function save() {
+        var request = db.transaction(["posbsnl"], "readwrite")
+       .objectStore("posbsnl")
+       .add({ 
+           franchise: franchise, 
+           fos: fos, 
+           ctopno: ctopno, 
+           altno: altno, 
+           emailid: emailid, 
+           retname: retname, 
+           shopname: shopname, 
+           shopno: shopno, 
+           street: street, 
+           landmark: landmark, 
+           locality: locality, 
+           city: city, 
+           state: state, 
+           pincode: pincode, 
+           visitedby: visitedby
+       }); 
+       request.onsuccess = function(event) {
+         alert("Saved"); 
+       };  
+       request.onerror = function(event) {
+          alert("Already exist");
+       }
+    }
+    
+    function find() { 
       
     }
     
-    function find() {
+    function remove() {
       
     }
     
