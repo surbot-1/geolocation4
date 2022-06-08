@@ -266,8 +266,37 @@
        }
     }
     
-    function find() { 
-      
+    function Read() { 
+       var toread = document.getElementById("ctopno").value;
+       var transaction = db.transaction(["posbsnl"]);
+       var objectStore = transaction.objectStore("posbsnl");
+       var request = objectStore.get(toread); 
+       request.onsuccess = function(event) {
+               // Do something with the request.result!
+               if(request.result) { 
+                  var franchise = request.result.franchise; 
+                  var fos = request.result.fos; 
+                  var ctopno = request.result.ctopno;  
+                  var altno = request.result.altno;  
+                  var emailid = request.result.emailid; 
+                  var retname = request.result.retname;  
+                  var shopname = request.result.shopname; 
+                  var shopno = request.result.shopno; 
+                  var street = request.result.street;  
+                  var landmark = request.result.landmark;  
+                  var locality = request.result.locality; 
+                  var city = request.result.city;  
+                  var state = request.result.state;  
+                  var pincode = request.result.pincode;  
+                  var visitedby = request.result.visitedby;  
+                  alert("Name: " + name + ", Age: " + age + ", Gender: " + gender + ", Email: " + email);
+               } else {
+                  alert(toread + " " + "couldn't be found!");
+               }
+            }; 
+      request.onerror = function(event) {
+               alert("Unable to retrieve!");
+            };
     }
     
     function remove() {
