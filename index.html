@@ -98,9 +98,40 @@
     <input type="text" class="input" id="visitedby" placeholder="Visited By"> 
    <!- <input type="button" class="input" id="input" value="Ok" onclick="input()"> <!-
   </p>
-  <p class="p4" id="demo4"></p>
+  <p class="p4" id="demo4"></p> 
+  
+  <script type = "text/javascript"> 
+         
+         //prefixes of implementation that we want to test
+         window.indexedDB = window.indexedDB || window.mozIndexedDB || 
+         window.webkitIndexedDB || window.msIndexedDB;
+         
+         //prefixes of window.IDB objects
+         window.IDBTransaction = window.IDBTransaction || 
+         window.webkitIDBTransaction || window.msIDBTransaction;
+         window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
+         window.msIDBKeyRange; 
+         
+         if (!window.indexedDB) {
+            window.alert("Your browser doesn't support a stable version of IndexedDB."); 
+         } // else { alert('Ok'); }
+         var db;
+         var request = window.indexedDB.open("newDatabase", 1); 
+         request.onerror = function(event) {
+            alert("error: ");
+         }; 
+         request.onsuccess = function(event) {
+            db = request.result;
+           // alert("success: "+ db);
+         }; 
+         request.onupgradeneeded = function(event) {
+            var db = event.target.result;
+            var objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopup"}); 
+         } 
+    
+  </script>
  
-  <script>
+  <script> 
 
     var variable2 = document.getElementById("demo2"); 
     var variable3 = document.getElementById("demo3"); 
