@@ -253,8 +253,8 @@
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
-           lat: lat, 
-           lng: lng, 
+           latitude: latitude, 
+           longitude: longitude, 
            franchise: franchise, 
            fos: fos, 
            ctopno: ctopno, 
