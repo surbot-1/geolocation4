@@ -312,8 +312,8 @@
         saveready = false; 
         readready = false; 
         removeready = true; 
-       var toread = ctopno; 
-       // var toread = document.getElementById("ctopno").value;
+       // var toread = ctopno; 
+       var toread = document.getElementById("ctopno").value;
        var transaction = db.transaction(["posbsnl"]);
        var objectStore = transaction.objectStore("posbsnl");
        var request = objectStore.get(toread); 
@@ -383,7 +383,8 @@
         saveready = true; 
         readready = false; 
         removeready = false; 
-            var toremove = document.getElementById("ctopno").value;
+            var toremove = ctopno; 
+            // var toremove = document.getElementById("ctopno").value;
             var request = db.transaction(["posbsnl"], "readwrite")
             .objectStore("posbsnl")
             .delete(toremove);
