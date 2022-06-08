@@ -390,8 +390,31 @@
             .delete(toremove);
             
             request.onsuccess = function(event) { 
-               variable2.innerHTML = ""; 
-               variable3.innerHTML = ""; 
+                 variable2.innerHTML ="";
+                 variable2.innerHTML =
+                 "Latitude  : " + " " + "<br>" +
+                 "Longitude : " + " " ;  
+                 variable3.innerHTML ="";
+                 variable3.innerHTML =
+                 "Franchise       : " + " " + "<br>" +
+                 "FOS             : " + " " + "<br>" + 
+                 "<br>" +
+                 "CTOPUP No       : " + " " + "<br>" +
+                 "Alternate No    : " + " " + "<br>" +
+                 "Email ID        : " + " " + "<br>" +
+                 "Retailer Name   : " + " " + "<br>" +
+                 "Gender          : " + " " + "<br>" +
+                 "Shop Name       : " + " " + "<br>" + 
+                 "<br>" +
+                 "Shop No         : " + " " + "<br>" +
+                 "Street/Village  : " + " " + "<br>" +
+                 "Landmark/PO     : " + " " + "<br>" +
+                 "Locality/Tehsil : " + " " + "<br>" +
+                 "City/District   : " + " " + "<br>" +
+                 "State/UT        : " + " " + "<br>" +
+                 "PIN Code        : " + " " + "<br>" +
+                 "<br>" +
+                 "Visited By : " + " " ;
                alert(toremove + " " + "has been removed successfully");
             }; 
             request.onerror = function(event) {
