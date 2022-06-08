@@ -160,6 +160,11 @@
     var state; 
     var pincode; 
     var visitedby; 
+    
+    var cords = false; 
+    var save = false; 
+    var read = false; 
+    var remove = false; 
 
     var variable2 = document.getElementById("demo2"); 
     var variable3 = document.getElementById("demo3"); 
@@ -169,8 +174,12 @@
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
     }
 
-    function showLoc(pos) {
+    function showLoc(pos) { 
       variable2.innerHTML =
+        "Latitude  :"; 
+        "<br>" + 
+        "Longitude :"; 
+      variable2.innerHTML = 
         "Latitude  : " +
         pos.coords.latitude +
         "<br>" + 
