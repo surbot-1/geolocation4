@@ -161,10 +161,11 @@
     var pincode; 
     var visitedby; 
     
-    var cords = false; 
-    var save = false; 
-    var read = false; 
-    var remove = false; 
+    var previewready = false; 
+    var cordsreadready = false; 
+    var saveready = false; 
+    var readready = false; 
+    var removeready = false; 
 
     var variable2 = document.getElementById("demo2"); 
     var variable3 = document.getElementById("demo3"); 
@@ -176,9 +177,9 @@
 
     function showLoc(pos) { 
       variable2.innerHTML =
-        "Latitude  :"; 
+        "Latitude  : "; 
         "<br>" + 
-        "Longitude :"; 
+        "Longitude : "; 
       variable2.innerHTML = 
         "Latitude  : " +
         pos.coords.latitude +
@@ -219,6 +220,11 @@
     } 
     
     function preview() { 
+        previewready = false; 
+        cordsreadready = true; 
+        saveready = true; 
+        readready = false; 
+        removeready = false; 
       // latitude; 
       // longitude;
       franchise = document.getElementById("franchise").value; 
@@ -262,6 +268,12 @@
     } 
     
     function save() { 
+      if (saveready) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = false; 
+        readready = false; 
+        removeready = true; 
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
@@ -290,10 +302,18 @@
        request.onerror = function(event) {
           alert(ctopno + " " + "already exist");
        }; 
+      } else {} 
     }
     
     function read() { 
-       var toread = document.getElementById("ctopno").value;
+      if (readready) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = false; 
+        readready = false; 
+        removeready = true; 
+       var toread = ctopno; 
+       // var toread = document.getElementById("ctopno").value;
        var transaction = db.transaction(["posbsnl"]);
        var objectStore = transaction.objectStore("posbsnl");
        var request = objectStore.get(toread); 
@@ -350,11 +370,19 @@
             }; 
       request.onerror = function(event) {
                alert("Unable to retrieve!");
-            };
+            }; 
+      } else {} 
     }
     
-    function remove() {
-            read(); 
+    function remove() { 
+      if (removeready) { 
+        readready = true;
+        read(); 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = true; 
+        readready = true; 
+        removeready = false; 
             var toremove = document.getElementById("ctopno").value;
             var request = db.transaction(["posbsnl"], "readwrite")
             .objectStore("posbsnl")
@@ -365,13 +393,14 @@
             }; 
             request.onerror = function(event) {
                alert("Unable to remove!"); 
-            };
+            }; 
+      } else {}
     }
     
     variable2.innerHTML =
-        "Latitude  :" +
+        "Latitude  : " +
         "<br>" + 
-        "Longitude :"; 
+        "Longitude : "; 
     variable4.innerHTML = 
         "We respect our client's privacy" + 
         "<br>We do not store or share client's information"; 
