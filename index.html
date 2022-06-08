@@ -176,6 +176,7 @@
     }
 
     function showLoc(pos) { 
+     if (cordsreadready) {
       variable2.innerHTML =
         "Latitude  : "; 
         "<br>" + 
@@ -187,7 +188,8 @@
         "Longitude : " +
         pos.coords.longitude; 
       latitude = pos.coords.latitude ;
-      longitude = pos.coords.longitude ;
+      longitude = pos.coords.longitude ; 
+     } else {} 
     }
  
     function errHand(err) {
