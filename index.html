@@ -271,7 +271,7 @@
        }
     }
     
-    function Read() { 
+    function read() { 
        var toread = document.getElementById("ctopno").value;
        var transaction = db.transaction(["posbsnl"]);
        var objectStore = transaction.objectStore("posbsnl");
@@ -294,8 +294,7 @@
                   var city = request.result.city;  
                   var state = request.result.state;  
                   var pincode = request.result.pincode;  
-                  var visitedby = request.result.visitedby;  
-                  alert("Name: " + name + ", Age: " + age + ", Gender: " + gender + ", Email: " + email);
+                  var visitedby = request.result.visitedby; 
                } else {
                   alert(toread + " " + "couldn't be found!");
                }
