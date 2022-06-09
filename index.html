@@ -166,6 +166,9 @@
     var city; 
     var state; 
     var pincode; 
+    var activation; 
+    var mnp; 
+    var recharge; 
     var visitedby; 
     
     var previewready = true; 
@@ -255,6 +258,9 @@
       city = document.getElementById("city").value; 
       state = document.getElementById("state").value; 
       pincode = document.getElementById("pincode").value; 
+      activation = document.getElementById("activation").value; 
+      mnp = document.getElementById("mnp").value; 
+      recharge = document.getElementById("recharge").value; 
       visitedby = document.getElementById("visitedby").value; 
       
       variable3.innerHTML ="";
@@ -276,6 +282,10 @@
         "City/District   : " + city + "<br>" +
         "State/UT        : " + state + "<br>" +
         "PIN Code        : " + pincode + "<br>" +
+        "<br>" +
+        "Avg. Activation PM : " + activation + "<br>" +
+        "Avg. MNP PM     : " + mnp + "<br>" +
+        "Avg. Recharge PM: " + recharge + "<br>" +
         "<br>" +
         "Visited By : " + visitedby ;
     } 
@@ -307,6 +317,9 @@
            city: city, 
            state: state, 
            pincode: pincode, 
+           activation: activation, 
+           mnp: mnp, 
+           recharge: recharge, 
            visitedby: visitedby
        }); 
        request.onsuccess = function(event) { 
@@ -333,6 +346,10 @@
                  "City/District   : " + city + "<br>" +
                  "State/UT        : " + state + "<br>" +
                  "PIN Code        : " + pincode + "<br>" +
+                 "<br>" +
+                 "Avg. Activation PM  : " + activation + "<br>" +
+                 "Avg. MNP PM     : " + mnp + "<br>" +
+                 "Avg. Recharge PM: " + recharge + "<br>" +
                  "<br>" +
                  "Visited By : " + visitedby ;
          alert(ctopno + " " + "saved successfully"); 
@@ -375,6 +392,9 @@
                   city = request.result.city;  
                   state = request.result.state;  
                   pincode = request.result.pincode;  
+                  activation = request.result.activation;  
+                  mnp = request.result.mnp;  
+                  recharge = request.result.recharge;  
                   visitedby = request.result.visitedby; 
                   variable2.innerHTML ="";
                   variable2.innerHTML =
@@ -399,6 +419,10 @@
                  "City/District   : " + city + "<br>" +
                  "State/UT        : " + state + "<br>" +
                  "PIN Code        : " + pincode + "<br>" +
+                 "<br>" +
+                 "Avg. Activation PM  : " + activation + "<br>" +
+                 "Avg. MNP PM     : " + mnp + "<br>" +
+                 "Avg. Recharge PM: " + recharge + "<br>" +
                  "<br>" +
                  "Visited By : " + visitedby ;
                  
@@ -450,6 +474,10 @@
                  "State/UT        : " + " " + "<br>" +
                  "PIN Code        : " + " " + "<br>" +
                  "<br>" +
+                 "Avg. Activation PM  : " + " " + "<br>" +
+                 "Avg. MNP PM     : " + " " + "<br>" +
+                 "Avg. Recharge PM: " + " " + "<br>" +
+                 "<br>" + 
                  "Visited By : " + " " ;
                alert(toremove + " " + "has been removed successfully");
             }; 
