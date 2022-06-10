@@ -488,11 +488,12 @@
                var cursor = event.target.result; 
               
                if (cursor) { 
+                  ctopno = cursor.key;  
                   latitude = cursor.value.latitude; 
                   longitude = cursor.value.longitude; 
                   franchise = cursor.value.value.franchise; 
                   fosname = cursor.value.fosname; 
-                  ctopno = cursor.key;  
+                  // ctopno = cursor.key;  
                   altno = cursor.value.altno;  
                   emailid = cursor.value.emailid; 
                   posname = cursor.value.posname;  
