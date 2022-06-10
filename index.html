@@ -479,7 +479,7 @@
     function readAll() { 
             variable5.innerHTML =""; 
             var serialno = 0; 
-            var transaction = db.transaction("posbsnl");
+            var transaction = db.transaction(["posbsnl"]);
             var objectStore = transaction.objectStore("posbsnl");
         
             objectStore.openCursor().onsuccess = function(event) {
