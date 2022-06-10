@@ -94,16 +94,17 @@
     Delete
   </button> 
   
-  <p class="p2" id="demo2"></p>
-  <p class="p3" id="demo3"> 
+  <p class="p2" id="demo2">
+    Latitude : <br> 
+    Longitude : <br> 
     <input type="text" class="input" id="franchise" placeholder="Franchise Name and Code"> <br>
-    <input type="text" class="input" id="fos" placeholder="FOS Name and Code"> <br>
+    <input type="text" class="input" id="fosname" placeholder="FOS Name and Code"> <br>
     <br>
     <input type="text" class="input" id="ctopno" placeholder="CTOPUP No."> <br>
     <input type="text" class="input" id="altno" placeholder="Alternate No."> <br>
     <input type="text" class="input" id="emailid" placeholder="Email ID"> <br>
-    <input type="text" class="input" id="retname" placeholder="Retailer Name"> <br>
-    <input type="text" class="input" id="retgend" placeholder="Gender"> <br>
+    <input type="text" class="input" id="posname" placeholder="POS Name"> <br>
+    <input type="text" class="input" id="posgend" placeholder="Gender"> <br>
     <input type="text" class="input" id="shopname" placeholder="Shop Name"> <br>
     <br>
     <input type="text" class="input" id="shopno" placeholder="Shop No."> <br>
@@ -162,12 +163,12 @@
     var latitude = 0; 
     var longitude= 0 ; 
     var franchise; 
-    var fos; 
+    var fosname; 
     var ctopno; 
     var altno; 
     var emailid; 
-    var retname; 
-    var retgend; 
+    var posname; 
+    var posgend; 
     var shopname; 
     var shopno; 
     var street; 
@@ -260,15 +261,15 @@
         saveready = true; 
         readready = false; 
         removeready = false; 
-      // latitude; 
+      // latitude;
       // longitude;
       franchise = document.getElementById("franchise").value; 
-      fos = document.getElementById("fos").value; 
+      fos = document.getElementById("fosname").value; 
       ctopno = document.getElementById("ctopno").value; 
       altno = document.getElementById("altno").value; 
       emailid = document.getElementById("emailid").value; 
-      retname = document.getElementById("retname").value; 
-      retgend = document.getElementById("retgend").value; 
+      retname = document.getElementById("posname").value; 
+      retgend = document.getElementById("posgend").value; 
       shopname = document.getElementById("shopname").value; 
       shopno = document.getElementById("shopno").value; 
       street = document.getElementById("street").value; 
@@ -282,16 +283,18 @@
       recharge = document.getElementById("recharge").value; 
       visitedby = document.getElementById("visitedby").value; 
       
-      variable3.innerHTML ="";
-      variable3.innerHTML =
+      variable2.innerHTML ="";
+      variable2.innerHTML = 
+        "Latitude        : " + latitude + "<br>" +
+        "Longitude       : " + longitude + "<br>" + 
         "Franchise       : " + franchise + "<br>" +
-        "FOS             : " + fos + "<br>" + 
+        "FOS Name        : " + fosname + "<br>" + 
         "<br>" +
         "CTOPUP No       : " + ctopno + "<br>" +
         "Alternate No    : " + altno + "<br>" +
         "Email ID        : " + emailid + "<br>" +
-        "Retailer Name   : " + retname + "<br>" +
-        "Gender          : " + retgend + "<br>" +
+        "POS Name        : " + posname + "<br>" +
+        "Gender          : " + posgend + "<br>" +
         "Shop Name       : " + shopname + "<br>" + 
         "<br>" +
         "Shop No         : " + shopno + "<br>" +
@@ -322,12 +325,12 @@
            latitude: latitude, 
            longitude: longitude, 
            franchise: franchise, 
-           fos: fos, 
+           fosname: fosname, 
            ctopno: ctopno, 
            altno: altno, 
            emailid: emailid, 
-           retname: retname,
-           retgend: retgend,
+           posname: posname,
+           posgend: posgend,
            shopname: shopname, 
            shopno: shopno, 
            street: street, 
@@ -345,17 +348,15 @@
                  variable2.innerHTML ="";
                  variable2.innerHTML =
                  "Latitude  : " + latitude + "<br>" +
-                 "Longitude : " + longitude ;  
-                 variable3.innerHTML ="";
-                 variable3.innerHTML =
+                 "Longitude : " + longitude + "<br>" +
                  "Franchise       : " + franchise + "<br>" +
-                 "FOS             : " + fos + "<br>" + 
+                 "FOS Name        : " + fosname + "<br>" + 
                  "<br>" +
                  "CTOPUP No       : " + ctopno + "<br>" +
                  "Alternate No    : " + altno + "<br>" +
                  "Email ID        : " + emailid + "<br>" +
-                 "Retailer Name   : " + retname + "<br>" +
-                 "Gender          : " + retgend + "<br>" +
+                 "POS Name        : " + posname + "<br>" +
+                 "Gender          : " + posgend + "<br>" +
                  "Shop Name       : " + shopname + "<br>" + 
                  "<br>" +
                  "Shop No         : " + shopno + "<br>" +
@@ -418,17 +419,15 @@
                   variable2.innerHTML ="";
                   variable2.innerHTML =
                  "Latitude  : " + latitude + "<br>" +
-                 "Longitude : " + longitude ;  
-                 variable3.innerHTML ="";
-                 variable3.innerHTML =
+                 "Longitude : " + longitude + "<br>" + 
                  "Franchise       : " + franchise + "<br>" +
-                 "FOS             : " + fos + "<br>" + 
+                 "FOS Name        : " + fosname + "<br>" + 
                  "<br>" +
                  "CTOPUP No       : " + ctopno + "<br>" +
                  "Alternate No    : " + altno + "<br>" +
                  "Email ID        : " + emailid + "<br>" +
-                 "Retailer Name   : " + retname + "<br>" +
-                 "Gender          : " + retgend + "<br>" +
+                 "POS Name        : " + posname + "<br>" +
+                 "Gender          : " + posgend + "<br>" +
                  "Shop Name       : " + shopname + "<br>" + 
                  "<br>" +
                  "Shop No         : " + shopno + "<br>" +
@@ -455,8 +454,73 @@
       } else {} 
     } 
     
-    function readAll() {
-      
+    function readAll() { 
+            var transaction = db.transaction(["posbsnl"]);
+            var objectStore = transaction.objectStore("posbsnl");
+        
+            objectStore.openCursor().onsuccess = function(event) {
+               var cursor = event.target.result; 
+               
+               variable2.innerHTML =""; 
+               var serialno = 0; 
+              
+               if (cursor) { 
+                  latitude = request.result.latitude; 
+                  longitude = request.result.longitude; 
+                  franchise = request.result.franchise; 
+                  fosname = request.result.fosname; 
+                  ctopno = request.result.ctopno;  
+                  altno = request.result.altno;  
+                  emailid = request.result.emailid; 
+                  posname = request.result.posname;  
+                  posgend = request.result.posgend;  
+                  shopname = request.result.shopname; 
+                  shopno = request.result.shopno; 
+                  street = request.result.street;  
+                  landmark = request.result.landmark;  
+                  locality = request.result.locality; 
+                  city = request.result.city;  
+                  state = request.result.state;  
+                  pincode = request.result.pincode;  
+                  activation = request.result.activation;  
+                  mnp = request.result.mnp;  
+                  recharge = request.result.recharge;  
+                  visitedby = request.result.visitedby; 
+                  // variable2.innerHTML ="";
+                  variable2.innerHTML +=
+                 "Latitude  : " + latitude + "<br>" +
+                 "Longitude : " + longitude + "<br>" + 
+                 "<br>" + 
+                 "Franchise       : " + franchise + "<br>" +
+                 "FOS Name              : " + fosname + "<br>" + 
+                 "<br>" +
+                 "CTOPUP No       : " + ctopno + "<br>" +
+                 "Alternate No    : " + altno + "<br>" +
+                 "Email ID        : " + emailid + "<br>" +
+                 "POS Name        : " + posname + "<br>" +
+                 "Gender          : " + posgend + "<br>" +
+                 "Shop Name       : " + shopname + "<br>" + 
+                 "<br>" +
+                 "Shop No         : " + shopno + "<br>" +
+                 "Street/Village  : " + street + "<br>" +
+                 "Landmark/PO     : " + landmark + "<br>" +
+                 "Locality/Tehsil : " + locality + "<br>" +
+                 "City/District   : " + city + "<br>" +
+                 "State/UT        : " + state + "<br>" +
+                 "PIN Code        : " + pincode + "<br>" +
+                 "<br>" +
+                 "Avg. Activation PM : " + activation + "<br>" +
+                 "Avg. MNP PM        : " + mnp + "<br>" +
+                 "Avg. Recharge PM   : " + recharge + "<br>" +
+                 "<br>" +
+                 "Visited By : " + visitedby + "<br>" +
+                 "<br>" + 
+                 "<br>" ; 
+                  cursor.continue();
+               } else {
+                  alert("No more entries!");
+               }
+            };
     } 
     
     function edit() {
@@ -480,16 +544,14 @@
                  variable2.innerHTML ="";
                  variable2.innerHTML =
                  "Latitude  : " + " " + "<br>" +
-                 "Longitude : " + " " ;  
-                 variable3.innerHTML ="";
-                 variable3.innerHTML =
+                 "Longitude : " + " " + "<br>" + 
                  "Franchise       : " + " " + "<br>" +
-                 "FOS             : " + " " + "<br>" + 
+                 "FOS Name            : " + " " + "<br>" + 
                  "<br>" +
                  "CTOPUP No       : " + " " + "<br>" +
                  "Alternate No    : " + " " + "<br>" +
                  "Email ID        : " + " " + "<br>" +
-                 "Retailer Name   : " + " " + "<br>" +
+                 "POS Name   : " + " " + "<br>" +
                  "Gender          : " + " " + "<br>" +
                  "Shop Name       : " + " " + "<br>" + 
                  "<br>" +
@@ -518,10 +580,6 @@
       
     }
     
-    variable2.innerHTML =
-        "Latitude  : " +
-        "<br>" + 
-        "Longitude : "; 
     variable4.innerHTML = 
         "We respect our client's privacy" + 
         "<br>We do not store or share client's information"; 
