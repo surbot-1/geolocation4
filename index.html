@@ -488,27 +488,27 @@
                var cursor = event.target.result; 
               
                if (cursor) { 
-                  latitude = cursor.latitude; 
-                  longitude = cursor.longitude; 
-                  franchise = cursor.franchise; 
-                  fosname = cursor.fosname; 
+                  latitude = cursor.value.latitude; 
+                  longitude = cursor.value.longitude; 
+                  franchise = cursor.value.value.franchise; 
+                  fosname = cursor.value.fosname; 
                   ctopno = cursor.key;  
-                  altno = cursor.altno;  
-                  emailid = cursor.emailid; 
-                  posname = cursor.posname;  
-                  posgend = cursor.posgend;  
-                  shopname = cursor.shopname; 
+                  altno = cursor.value.altno;  
+                  emailid = cursor.value.emailid; 
+                  posname = cursor.value.posname;  
+                  posgend = cursor.value.posgend;  
+                  shopname = cursor.value.shopname; 
                   shopno = cursor.shopno; 
-                  street = cursor.street;  
-                  landmark = cursor.landmark;  
-                  locality = cursor.locality; 
-                  city = cursor.city;  
-                  state = cursor.state;  
-                  pincode = cursor.pincode;  
-                  activation = cursor.activation;  
-                  mnp = cursor.mnp;  
-                  recharge = cursor.recharge;  
-                  visitedby = cursor.visitedby; 
+                  street = cursor.value.street;  
+                  landmark = cursor.value.landmark;  
+                  locality = cursor.value.locality; 
+                  city = cursor.value.city;  
+                  state = cursor.value.state;  
+                  pincode = cursor.value.pincode;  
+                  activation = cursor.value.activation;  
+                  mnp = cursor.value.mnp;  
+                  recharge = cursor.value.recharge;  
+                  visitedby = cursor.value.visitedby; 
                   // variable5.innerHTML ="";
                   variable5.innerHTML += 
                  "Serial No: " + serialno + "<br>" +
@@ -542,7 +542,9 @@
                  "<br>" ; 
                   serialno++; 
                   cursor.continue();
-               } else {
+               } else { 
+                  variable5.innerHTML += 
+                  "Total POS Count = " + serialno; 
                   // alert("No more entries!");
                }
             };
