@@ -131,7 +131,7 @@
     <br> 
     <input type="text" class="input" id="visitedby" placeholder="Visited By"> 
     <input type="button" class="input" id="autofill" value="Autofill" onclick="autofill()"> 
-    <input type="button" class="input" id="previous" value="Previous" onclick="previous()"> 
+    <input type="button" class="input" id="previous" value="Previous" onclick="readAll()"> 
     <input type="button" class="input" id="preview" value="Preview" onclick="preview()"> 
   </p>
   <p class="p4" id="demo4"> 
@@ -272,7 +272,7 @@
     }
     
     function preview() { 
-        previewready = false; 
+        previewready = true; 
         cordsreadready = true; 
         saveready = true; 
         readready = false; 
@@ -334,7 +334,7 @@
       if (saveready) { 
         previewready = false; 
         cordsreadready = false; 
-        saveready = false; 
+        saveready = true; 
         readready = false; 
         removeready = true; 
         var request = db.transaction(["posbsnl"], "readwrite")
@@ -405,7 +405,7 @@
         previewready = false; 
         cordsreadready = false; 
         saveready = false; 
-        readready = false; 
+        readready = true; 
         removeready = true; 
        // var toread = ctopno; 
        var toread = document.getElementById("ctopno").value;
@@ -555,7 +555,7 @@
         cordsreadready = false; 
         saveready = true; 
         readready = false; 
-        removeready = false; 
+        removeready = true; 
             var toremove = ctopno; 
             // var toremove = document.getElementById("ctopno").value;
             var request = db.transaction(["posbsnl"], "readwrite")
