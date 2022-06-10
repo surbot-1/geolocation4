@@ -63,7 +63,7 @@
     .p5 {
       color: #000000;
       font-size: 16px;
-      margin-top: 10px;
+      margin-top: 20px;
       margin-left: 20px;
     }
 
@@ -478,7 +478,9 @@
     
     function readAll() { 
             variable5.innerHTML =""; 
-            var serialno = 0; 
+            variable5.innerHTML += 
+            "All POS" + "<br>";
+            var serialno = 1; 
             var transaction = db.transaction(["posbsnl"]);
             var objectStore = transaction.objectStore("posbsnl");
         
@@ -508,7 +510,8 @@
                   recharge = cursor.recharge;  
                   visitedby = cursor.visitedby; 
                   // variable5.innerHTML ="";
-                  variable5.innerHTML +=
+                  variable5.innerHTML += 
+                 "Serial No: " + serialno + "<br>" +
                  "Latitude  : " + latitude + "<br>" +
                  "Longitude : " + longitude + "<br>" + 
                  "<br>" + 
@@ -537,9 +540,10 @@
                  "Visited By : " + visitedby + "<br>" +
                  "<br>" + 
                  "<br>" ; 
+                  serialno++; 
                   cursor.continue();
                } else {
-                  alert("No more entries!");
+                  // alert("No more entries!");
                }
             };
     } 
