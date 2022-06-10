@@ -58,6 +58,13 @@
       font-size: 10px;
       margin-top: 10px;
       margin-left: 20px;
+    } 
+    
+    .p5 {
+      color: #000000;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-left: 20px;
     }
 
   </style>
@@ -96,7 +103,10 @@
   
   <p class="p2" id="demo2">
     Latitude : <br> 
-    Longitude : <br> 
+    Longitude : 
+  </p>
+    
+  <p class="p3" id="demo3">
     <input type="text" class="input" id="franchise" placeholder="Franchise Name and Code"> <br>
     <input type="text" class="input" id="fosname" placeholder="FOS Name and Code"> <br>
     <br>
@@ -124,7 +134,12 @@
     <input type="button" class="input" id="previous" value="Previous" onclick="previous()"> 
     <input type="button" class="input" id="preview" value="Preview" onclick="preview()"> 
   </p>
-  <p class="p4" id="demo4"></p> 
+  <p class="p4" id="demo4"> 
+      We respect our client's privacy <br>
+      We do not store or share client's information
+  </p> 
+  <p class="p5" id="demo5"> </p>
+    
   
   <script type = "text/javascript"> 
          
@@ -191,6 +206,7 @@
     var variable2 = document.getElementById("demo2"); 
     var variable3 = document.getElementById("demo3"); 
     var variable4 = document.getElementById("demo4"); 
+    var variable5 = document.getElementById("demo5"); 
     
     function getlocation() {
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
@@ -286,7 +302,9 @@
       variable2.innerHTML ="";
       variable2.innerHTML = 
         "Latitude        : " + latitude + "<br>" +
-        "Longitude       : " + longitude + "<br>" + 
+        "Longitude       : " + longitude ; 
+      variable3.innerHTML ="";
+      variable3.innerHTML = 
         "Franchise       : " + franchise + "<br>" +
         "FOS Name        : " + fosname + "<br>" + 
         "<br>" +
@@ -345,10 +363,12 @@
            visitedby: visitedby
        }); 
        request.onsuccess = function(event) { 
-                 variable2.innerHTML ="";
-                 variable2.innerHTML =
+              variable2.innerHTML ="";
+              variable2.innerHTML =
                  "Latitude  : " + latitude + "<br>" +
-                 "Longitude : " + longitude + "<br>" +
+                 "Longitude : " + longitude ; 
+              variable3.innerHTML ="";
+              variable3.innerHTML =
                  "Franchise       : " + franchise + "<br>" +
                  "FOS Name        : " + fosname + "<br>" + 
                  "<br>" +
@@ -416,10 +436,12 @@
                   mnp = request.result.mnp;  
                   recharge = request.result.recharge;  
                   visitedby = request.result.visitedby; 
-                  variable2.innerHTML ="";
-                  variable2.innerHTML =
+                 variable2.innerHTML ="";
+                 variable2.innerHTML =
                  "Latitude  : " + latitude + "<br>" +
-                 "Longitude : " + longitude + "<br>" + 
+                 "Longitude : " + longitude ; 
+                 variable3.innerHTML ="";
+                 variable3.innerHTML =
                  "Franchise       : " + franchise + "<br>" +
                  "FOS Name        : " + fosname + "<br>" + 
                  "<br>" +
@@ -461,7 +483,7 @@
             objectStore.openCursor().onsuccess = function(event) {
                var cursor = event.target.result; 
                
-               variable2.innerHTML =""; 
+               variable5.innerHTML =""; 
                var serialno = 0; 
               
                if (cursor) { 
@@ -486,8 +508,8 @@
                   mnp = request.result.mnp;  
                   recharge = request.result.recharge;  
                   visitedby = request.result.visitedby; 
-                  // variable2.innerHTML ="";
-                  variable2.innerHTML +=
+                  // variable5.innerHTML ="";
+                  variable5.innerHTML +=
                  "Latitude  : " + latitude + "<br>" +
                  "Longitude : " + longitude + "<br>" + 
                  "<br>" + 
@@ -544,7 +566,9 @@
                  variable2.innerHTML ="";
                  variable2.innerHTML =
                  "Latitude  : " + " " + "<br>" +
-                 "Longitude : " + " " + "<br>" + 
+                 "Longitude : " + " " ; 
+                 variable3.innerHTML ="";
+                 variable3.innerHTML =
                  "Franchise       : " + " " + "<br>" +
                  "FOS Name            : " + " " + "<br>" + 
                  "<br>" +
@@ -579,11 +603,8 @@
     function removeAll() {
       
     }
+ 
     
-    variable4.innerHTML = 
-        "We respect our client's privacy" + 
-        "<br>We do not store or share client's information"; 
-
   </script>
 
 </body>
