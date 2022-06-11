@@ -492,45 +492,45 @@
                var cursor = event.target.result; 
               
                if (cursor) { 
-                  latitude = cursor.value.latitude; 
-                  longitude = cursor.value.longitude; 
-                  franchise = cursor.value.franchise; 
-                  fosname = cursor.value.fosname; 
-                  ctopno = cursor.key;  
-                  altno = cursor.value.altno;  
-                  emailid = cursor.value.emailid; 
-                  posname = cursor.value.posname;  
-                  posgend = cursor.value.posgend;  
-                  shopname = cursor.value.shopname; 
-                  shopno = cursor.value.shopno; 
-                  street = cursor.value.street;  
-                  landmark = cursor.value.landmark;  
-                  locality = cursor.value.locality; 
-                  city = cursor.value.city;  
-                  state = cursor.value.state;  
-                  pincode = cursor.value.pincode;  
-                  activation = cursor.value.activation;  
-                  mnp = cursor.value.mnp;  
-                  recharge = cursor.value.recharge;  
-                  visitedby = cursor.value.visitedby; 
-                  variable5.innerHTML += 
-                 "Serial No: " + serialno + "<br>" +
+                  var latitude = cursor.value.latitude; 
+                  var longitude = cursor.value.longitude; 
+                  var franchise = cursor.value.franchise; 
+                  var fosname = cursor.value.fosname; 
+                  var ctopno = cursor.key;  
+                  var altno = cursor.value.altno;  
+                  var emailid = cursor.value.emailid; 
+                  var posname = cursor.value.posname;  
+                  var posgend = cursor.value.posgend;  
+                  var shopname = cursor.value.shopname; 
+                  var shopno = cursor.value.shopno; 
+                  var street = cursor.value.street;  
+                  var landmark = cursor.value.landmark;  
+                  var locality = cursor.value.locality; 
+                  var city = cursor.value.city;  
+                  var state = cursor.value.state;  
+                  var pincode = cursor.value.pincode;  
+                  var activation = cursor.value.activation;  
+                  var mnp = cursor.value.mnp;  
+                  var recharge = cursor.value.recharge;  
+                  var visitedby = cursor.value.visitedby; 
+                 // variable5.innerHTML += 
+                 // "Serial No: " + serialno + "<br>" +
                  // "Latitude  : " + latitude + "<br>" +
                  // "Longitude : " + longitude + "<br>" + 
                  // "<br>" + 
                  // "Franchise       : " + franchise + "<br>" +
                  // "FOS Name        : " + fosname + "<br>" + 
                  // "<br>" +
-                 "CTOPUP No       : " + ctopno + "<br>" +
-                 "Alternate No    : " + altno + "<br>" +
+                 // "CTOPUP No       : " + ctopno + "<br>" +
+                 // "Alternate No    : " + altno + "<br>" +
                  // "Email ID        : " + emailid + "<br>" +
                  // "POS Name        : " + posname + "<br>" +
                  // "Gender          : " + posgend + "<br>" +
-                 "Shop Name       : " + shopname + "<br>" + 
+                 // "Shop Name       : " + shopname + "<br>" + 
                  // "<br>" +
                  // "Shop No         : " + shopno + "<br>" +
                  // "Street/Village  : " + street + "<br>" +
-                 "Landmark/PO     : " + landmark + "<br>" +
+                 // "Landmark/PO     : " + landmark + "<br>" +
                  // "Locality/Tehsil : " + locality + "<br>" +
                  // "City/District   : " + city + "<br>" +
                  // "State/UT        : " + state + "<br>" +
@@ -542,7 +542,12 @@
                  // "<br>" +
                  // "Visited By : " + visitedby + "<br>" +
                  // "<br>" + 
-                 "<br>" ; 
+                 // "<br>" ; 
+                  variable5.innerHTML += 
+                    serialno + "." + " " + 
+                    ctopno + " " + 
+                    altno + " " + 
+                    shopname ; 
                   serialno++; 
                   cursor.continue();
                } else { 
