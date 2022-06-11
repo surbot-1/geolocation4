@@ -418,13 +418,13 @@
           var transaction = db.transaction(["posbsnl"]);
           var objectStore = transaction.objectStore("posbsnl");
           request = objectStore.get(toread); 
-        } else { 
-          toread = document.getElementById("shopname").value; 
-          var transaction = db.transaction(["posbsnl"]);
-          var objectStore = transaction.objectStore("posbsnl");
-          var index = objectStore.index("name");
-          request = index.get(toread); 
-        } 
+         } // else { 
+         // toread = document.getElementById("shopname").value; 
+         // var transaction = db.transaction(["posbsnl"]);
+         // var objectStore = transaction.objectStore("posbsnl");
+         // var index = objectStore.index("name");
+         // request = index.get(toread); 
+        // } 
        request.onsuccess = function(event) {
                // Do something with the request.result!
                if(request.result) { 
