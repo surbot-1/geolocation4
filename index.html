@@ -155,9 +155,10 @@
          
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
-         }  // else { alert('Ok'); }
+         }  // else { alert('Ok'); } 
+    
          var db; 
-         var objectStore; 
+      function openDB() {
          var request = window.indexedDB.open("posbsnldb", 1); 
          request.onerror = function(event) {
             alert("error: ");
@@ -169,7 +170,9 @@
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
             var objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopno"}); 
-         } 
+            objectStore.createIndex('shopname', 'shopname', { unique: false });
+         }; 
+      }
     
   </script>
  
