@@ -407,8 +407,11 @@
         saveready = false; 
         readready = true; 
         removeready = true; 
-       // var toread = ctopno; 
-       var toread = document.getElementById("ctopno").value;
+        // var toread; 
+        var toread = document.getElementById("ctopno").value; 
+        if (toread = null) { 
+          toread = document.getElementById("shopname").value; 
+        }
        var transaction = db.transaction(["posbsnl"]);
        var objectStore = transaction.objectStore("posbsnl");
        var request = objectStore.get(toread); 
