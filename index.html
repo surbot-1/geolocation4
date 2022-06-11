@@ -238,6 +238,7 @@
     var variable3 = document.getElementById("demo3"); 
     var variable4 = document.getElementById("demo4"); 
     var variable5 = document.getElementById("demo5"); 
+    var variable6 = document.getElementById("demo6"); 
     
     function getlocation() {
       navigator.geolocation.getCurrentPosition(showLoc, errHand);
@@ -517,8 +518,8 @@
     } 
     
     function readAll() { 
-            variable5.innerHTML =""; 
-            variable5.innerHTML += 
+            variable6.innerHTML =""; 
+            variable6.innerHTML += 
             "All POS" + "<br>";
             var serialno = 1; 
             var transaction = db.transaction(["posbsnl"]);
@@ -549,7 +550,7 @@
                   var mnp = cursor.value.mnp;  
                   var recharge = cursor.value.recharge;  
                   var visitedby = cursor.value.visitedby; 
-                 // variable5.innerHTML += 
+                 // variable6.innerHTML += 
                  // "Serial No: " + serialno + "<br>" +
                  // "Latitude  : " + latitude + "<br>" +
                  // "Longitude : " + longitude + "<br>" + 
@@ -579,7 +580,7 @@
                  // "Visited By : " + visitedby + "<br>" +
                  // "<br>" + 
                  // "<br>" ; 
-                  variable5.innerHTML += 
+                  variable6.innerHTML += 
                     serialno + "." + " " + 
                     ctopno + " " + 
                     altno + " " + 
@@ -587,7 +588,7 @@
                   serialno++; 
                   cursor.continue();
                } else { 
-                  variable5.innerHTML += 
+                  variable6.innerHTML += 
                   "Total POS Count = " + (serialno-1); 
                   // alert("No more entries!");
                }
