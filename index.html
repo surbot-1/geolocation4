@@ -409,7 +409,7 @@
         removeready = true; 
         // var toread; 
         var toread = document.getElementById("ctopno").value; 
-        if (toread = null) { 
+        if (toread == null) { 
           toread = document.getElementById("shopname").value; 
         }
        var transaction = db.transaction(["posbsnl"]);
