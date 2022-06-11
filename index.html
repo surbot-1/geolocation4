@@ -138,7 +138,7 @@
       We respect our client's privacy <br>
       We do not store or share client's information
   </p> 
-  <p class="p5" id="demo5"> </p>
+  <p class="p5" id="demo5"></p>
     
   
   <script type = "text/javascript"> 
@@ -410,7 +410,7 @@
         // var toread; 
         var toread = document.getElementById("ctopno").value; 
         alert(toread); 
-        if (toread == null) { 
+        if (toread == "") { 
           toread = document.getElementById("shopname").value; 
         }
        var transaction = db.transaction(["posbsnl"]);
