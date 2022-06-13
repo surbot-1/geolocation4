@@ -797,34 +797,6 @@
         title: "You are here!",
       }); 
     } 
-      
-    function areaMap(latitude, longitude) { 
-      showLoc(); 
-     function showLoc(pos) {
-      // latt = pos.coords.latitude;
-      // long = pos.coords.longitude; 
-      var latt = latitude; 
-      var long = longitude; 
-      var lattlong = new google.maps.LatLng(latt, long);
-      var OPTions = {
-        center: lattlong,
-        zoom: 15,
-        mapTypeControl: true,
-        navigationControlOptions: {
-          style: google.maps.NavigationControlStyle.SMALL,
-        }, 
-      };
-      var mapg = new google.maps.Map(
-        document.getElementById("div5"),
-        OPTions 
-      );
-      var markerg = new google.maps.Marker({
-        position: lattlong,
-        map: mapg,
-        title: "You are here!",
-      }); 
-     }
-    } 
 
     function errHand(err) {
       switch (err.code) {
@@ -847,7 +819,35 @@
       }
     }
     } 
-
+    
+function areaMap(latitude, longitude) { 
+   showLoc(); 
+   function showLoc(pos) {
+      // latt = pos.coords.latitude;
+      // long = pos.coords.longitude; 
+      var latt = latitude; 
+      var long = longitude; 
+      var lattlong = new google.maps.LatLng(latt, long);
+      var OPTions = {
+        center: lattlong,
+        zoom: 15,
+        mapTypeControl: true,
+        navigationControlOptions: {
+          style: google.maps.NavigationControlStyle.SMALL,
+        }, 
+      };
+      var mapg = new google.maps.Map(
+        document.getElementById("div5"),
+        OPTions 
+      );
+      var markerg = new google.maps.Marker({
+        position: lattlong,
+        map: mapg,
+        title: "You are here!",
+      }); 
+   } 
+}
+  
 function captureA() { 
   document.getElementById('filea').click(); 
   // var ele = document.getElementById('filea'); 
