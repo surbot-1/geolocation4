@@ -775,7 +775,7 @@
          navigator.geolocation.getCurrentPosition(showLoc, errHand);
        }
       }
-      function showLoc(pos) {
+    function showLoc(pos) {
       latt = pos.coords.latitude;
       long = pos.coords.longitude;
       var lattlong = new google.maps.LatLng(latt, long);
@@ -799,6 +799,7 @@
     } 
       
     function areaMap(latitude, longitude) { 
+      showLoc(); 
      function showLoc(pos) {
       // latt = pos.coords.latitude;
       // long = pos.coords.longitude; 
@@ -822,7 +823,8 @@
         map: mapg,
         title: "You are here!",
       }); 
-    }
+     }
+    } 
 
     function errHand(err) {
       switch (err.code) {
