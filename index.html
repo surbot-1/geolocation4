@@ -801,7 +801,7 @@
     
 function previewFileA() {
   var preview = document.getElementById('imga');
-  var file = document.getElementById('input[id=filea]').files[0];
+  var file = document.getElementById('filea').files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
     // convert image file to base64 string
