@@ -240,11 +240,12 @@
   
   <div class="div10" id="div10">
   <div class="image10" id="div10a">  
-    <input type="button" id="btna" value="Capture" onclick="">
-    <input type="file" id="filea" onchange="previewFileA()"><br>
+    <input type="button" id="btna" value="Capture" onclick="previewFileA()">
+    <input type="file" id="filea" onchange="previewFileA()" display-type="none"><br>
     <img id="imga" src="" width="520">
   </div> 
   <div class="image10" id="div10b"> 
+    <input type="button" id="btna" value="Capture" onclick="previewFileB()">
     <input type="file" id="fileb" onchange="previewFileB()"><br>
     <img id="imgb" src="" width="520">
   </div> 
@@ -799,7 +800,12 @@
       }
     }
     } 
-    
+
+function captureA() { 
+  document.getElementById('filea').click(); 
+  var ele = document.getElementById('filea'); 
+  ele.addEventListener('change', 'previewFileA');
+}
 function previewFileA() {
   var preview = document.getElementById('imga');
   var file = document.getElementById('filea').files[0];
