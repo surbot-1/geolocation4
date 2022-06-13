@@ -784,11 +784,17 @@
     } 
     
     function map() { 
-      getLocation(); 
-      function getLocation() {
-       if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(showLoc, errHand);
-       }
+      if (togglemap) { 
+        togglemap = false; 
+        getLocation(); 
+        function getLocation() { 
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showLoc, errHand); 
+          } 
+        } 
+      } else { 
+        togglemap = true; 
+        document.getElementById('div5').innerHTML = ""; 
       }
     function showLoc(pos) {
       latt = pos.coords.latitude;
