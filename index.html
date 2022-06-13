@@ -331,6 +331,9 @@
     var imagea; 
     var imageb; 
     
+    var togglecoords = true; 
+    var togglemap = true; 
+    
     var previewready = true; 
     var cordsreadready = true; 
     var saveready = false; 
@@ -344,15 +347,22 @@
     var variable6 = document.getElementById("demo6"); 
     
     function getlocation() {
-      navigator.geolocation.getCurrentPosition(showLoc, errHand);
-    }
-
-    function showLoc(pos) { 
-     if (cordsreadready) {
-      variable2.innerHTML =
+      if (togglecoords) { 
+        togglecoords = false; 
+        navigator.geolocation.getCurrentPosition(showLoc, errHand); 
+      } else { 
+        togglecoords = true; 
+        latitude = 0; 
+        longitude = 0; 
+        variable2.innerHTML =
         "Latitude  : "; 
         "<br>" + 
         "Longitude : "; 
+      }
+    }
+
+    function showLoc(pos) { 
+     if (cordsreadready) { 
       variable2.innerHTML = 
         "Latitude  : " +
         pos.coords.latitude +
