@@ -800,11 +800,11 @@
       
     function areaMap(latitude, longitude) { 
       showLoc(); 
-     function showLoc() {
+     function showLoc(pos) {
       // latt = pos.coords.latitude;
       // long = pos.coords.longitude; 
-      var latt = latitude; 
-      var long = longitude; 
+      latt = latitude; 
+      long = longitude; 
       var lattlong = new google.maps.LatLng(latt, long);
       var OPTions = {
         center: lattlong,
