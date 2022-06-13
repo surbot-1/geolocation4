@@ -240,14 +240,14 @@
   
   <div class="div10" id="div10">
   <div class="image10" id="div10a">  
-    <input type="button" id="btna" value="Capture" onclick="captureA()">
+    <input type="button" id="buttona" value="Capture" onclick="captureA()">
     <input type="file" id="filea" onchange="previewFileA()" style="display:none;"><br>
-    <img id="imga" src="" width="520">
+    <img id="imagea" src="" width="520">
   </div> 
   <div class="image10" id="div10b"> 
-    <input type="button" id="btnb" value="Capture" onclick="captureB()">
+    <input type="button" id="buttonb" value="Capture" onclick="captureB()">
     <input type="file" id="fileb" onchange="previewFileB()" style="display:none"><br>
-    <img id="imgb" src="" width="520">
+    <img id="imageb" src="" width="520">
   </div> 
   </div> 
   
@@ -321,6 +321,9 @@
     var activation; 
     var mnp; 
     var recharge; 
+    var map; 
+    var imagea; 
+    var imageb; 
     var visitedby; 
     
     var previewready = true; 
@@ -487,7 +490,10 @@
            activation: activation, 
            mnp: mnp, 
            recharge: recharge, 
-           visitedby: visitedby
+           visitedby: visitedby, 
+           map : map , 
+           imagea : imagea, 
+           imageb : imageb 
        }); 
        request.onsuccess = function(event) { 
               variable2.innerHTML ="";
@@ -518,7 +524,11 @@
                  "Avg. MNP PM        : " + mnp + "<br>" +
                  "Avg. Recharge PM   : " + recharge + "<br>" +
                  "<br>" +
-                 "Visited By : " + visitedby ;
+                 "Visited By : " + visitedby ; 
+                 // document.getElementById('div5');
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
+                 
          alert(ctopno + " " + "saved successfully"); 
        };  
        request.onerror = function(event) {
@@ -572,6 +582,9 @@
                   mnp = request.result.mnp;  
                   recharge = request.result.recharge;  
                   visitedby = request.result.visitedby; 
+                  map : map;  
+                  imagea : request.result.imagea; 
+                  imageb : request.result.imageb; 
                  variable2.innerHTML ="";
                  variable2.innerHTML =
                  "Latitude  : " + latitude + "<br>" +
@@ -600,7 +613,10 @@
                  "Avg. MNP PM        : " + mnp + "<br>" +
                  "Avg. Recharge PM   : " + recharge + "<br>" +
                  "<br>" +
-                 "Visited By : " + visitedby ;
+                 "Visited By : " + visitedby ; 
+                 // document.getElementById('div5');
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
                  
                } else {
                   alert(toread + " " + "couldn't be found!");
@@ -736,7 +752,10 @@
                  "Avg. MNP PM        : " + " " + "<br>" +
                  "Avg. Recharge PM   : " + " " + "<br>" +
                  "<br>" + 
-                 "Visited By : " + " " ;
+                 "Visited By : " + " " ; 
+                 // document.getElementById('div5');
+                 document.getElementById('imagea').src = ""; 
+                 document.getElementById('imageb').src = ""; 
                alert(toremove + " " + "has been removed successfully");
             }; 
             request.onerror = function(event) {
@@ -814,12 +833,13 @@ function captureB() {
 } 
     
 function previewFileA() {
-  var preview = document.getElementById('imga');
+  var preview = document.getElementById('imagea');
   var file = document.getElementById('filea').files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
-    // convert image file to base64 string
-    preview.src = reader.result;
+    // convert image file to base64 string 
+    preview.src = reader.result; 
+    imagea = reader.result; 
   }, false);
   if (file) {
     reader.readAsDataURL(file);
@@ -827,12 +847,13 @@ function previewFileA() {
 } 
     
 function previewFileB() {
-  var preview = document.querySelector('#imgb');
+  var preview = document.querySelector('#imageb');
   var file = document.querySelector('#fileb').files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
     // convert image file to base64 string
-    preview.src = reader.result;
+    preview.src = reader.result; 
+    imageb = reader.result; 
   }, false);
   if (file) {
     reader.readAsDataURL(file);
