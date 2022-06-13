@@ -805,7 +805,14 @@ function captureA() {
   document.getElementById('filea').click(); 
   var ele = document.getElementById('filea'); 
   ele.addEventListener('change', 'previewFileA');
-}
+} 
+   
+function captureB() { 
+  document.getElementById('fileb').click(); 
+  var ele = document.getElementById('fileb'); 
+  ele.addEventListener('change', 'previewFileB');
+} 
+    
 function previewFileA() {
   var preview = document.getElementById('imga');
   var file = document.getElementById('filea').files[0];
