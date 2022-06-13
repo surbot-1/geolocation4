@@ -614,7 +614,7 @@
                  "Avg. Recharge PM   : " + recharge + "<br>" +
                  "<br>" +
                  "Visited By : " + visitedby ; 
-                 // document.getElementById('div5');
+                 areaMap(latitude, longitude); 
                  document.getElementById('imagea').src = imagea; 
                  document.getElementById('imageb').src = imageb; 
                  
@@ -769,8 +769,8 @@
     } 
     
     function map() { 
-      getlocation(); 
-      function getlocation() {
+      getLocation(); 
+      function getLocation() {
        if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(showLoc, errHand);
        }
@@ -795,7 +795,33 @@
         position: lattlong,
         map: mapg,
         title: "You are here!",
-      });
+      }); 
+    } 
+      
+    function areaMap(latitude, longitude) { 
+     function showLoc(pos) {
+      // latt = pos.coords.latitude;
+      // long = pos.coords.longitude; 
+      var latt = latitude; 
+      var long = longitude; 
+      var lattlong = new google.maps.LatLng(latt, long);
+      var OPTions = {
+        center: lattlong,
+        zoom: 15,
+        mapTypeControl: true,
+        navigationControlOptions: {
+          style: google.maps.NavigationControlStyle.SMALL,
+        }, 
+      };
+      var mapg = new google.maps.Map(
+        document.getElementById("div5"),
+        OPTions 
+      );
+      var markerg = new google.maps.Marker({
+        position: lattlong,
+        map: mapg,
+        title: "You are here!",
+      }); 
     }
 
     function errHand(err) {
