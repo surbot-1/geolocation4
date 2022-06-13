@@ -813,8 +813,8 @@ function previewFileA() {
 } 
     
 function previewFileB() {
-  var preview = document.querySelector('imgb');
-  var file = document.querySelector('input[type=file]').files[0];
+  var preview = document.querySelector('#imgb');
+  var file = document.querySelector('#input[id=fileb]').files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
     // convert image file to base64 string
