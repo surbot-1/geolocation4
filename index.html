@@ -155,7 +155,7 @@
   <button class="button1" onclick="back()">
     Back
   </button> 
-  <button class="button2" onclick="getlocation()">
+  <button class="button2" onclick="getCoordinates()">
     Coordinates
   </button>
   <button class="button2" onclick="map()">
@@ -346,11 +346,11 @@
     var variable5 = document.getElementById("demo5"); 
     var variable6 = document.getElementById("demo6"); 
     
-    function getlocation() {
+    function getCoordinates() {
       if (togglecoords) { 
         togglecoords = false; 
         navigator.geolocation.getCurrentPosition(showLoc, errHand); 
-      } else { 
+      } else if (!togglecoords) { 
         togglecoords = true; 
         latitude = 0; 
         longitude = 0; 
@@ -617,7 +617,7 @@
                   mnp = request.result.mnp;  
                   recharge = request.result.recharge;  
                   visitedby = request.result.visitedby; 
-                  map = request.result.map;  
+                  areamap = request.result.areamap;  
                   imagea = request.result.imagea; 
                   imageb = request.result.imageb; 
                  variable2.innerHTML ="";
@@ -666,7 +666,7 @@
     function readAll() { 
             variable6.innerHTML =""; 
             variable6.innerHTML += 
-            "All POS" + "<br>";
+            "All POS(Point Of Sale)" + "<br>";
             var serialno = 1; 
             var transaction = db.transaction(["posbsnl"]);
             var objectStore = transaction.objectStore("posbsnl");
@@ -946,13 +946,13 @@
             navigator.geolocation.getCurrentPosition(showLoc, errHand); 
           } 
         } 
-      } else { 
+      } else if(!togglemap) { 
         togglemap = true; 
         document.getElementById('div5').innerHTML = ""; 
       }
     function showLoc(pos) {
-      latt = pos.coords.latitude;
-      long = pos.coords.longitude;
+      var latt = pos.coords.latitude;
+      var long = pos.coords.longitude;
       var lattlong = new google.maps.LatLng(latt, long);
       var OPTions = {
         center: lattlong,
