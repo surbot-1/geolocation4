@@ -743,6 +743,83 @@
     
     function edit() {
       
+    } 
+    
+    function update() {
+      if (true) { 
+        previewready = false; 
+        cordsreadready = false; 
+        saveready = true; 
+        readready = false; 
+        removeready = true; 
+        var request = db.transaction(["posbsnl"], "readwrite")
+       .objectStore("posbsnl")
+       .put({ 
+           latitude: latitude, 
+           longitude: longitude, 
+           franchise: franchise, 
+           fosname: fosname, 
+           ctopno: ctopno, 
+           altno: altno, 
+           emailid: emailid, 
+           posname: posname,
+           posgend: posgend,
+           shopname: shopname, 
+           shopno: shopno, 
+           street: street, 
+           landmark: landmark, 
+           locality: locality, 
+           city: city, 
+           state: state, 
+           pincode: pincode, 
+           activation: activation, 
+           mnp: mnp, 
+           recharge: recharge, 
+           visitedby: visitedby, 
+           areamap: areamap, 
+           imagea: imagea, 
+           imageb: imageb 
+       }); 
+       request.onsuccess = function(event) { 
+              variable2.innerHTML ="";
+              variable2.innerHTML =
+                 "Latitude  : " + latitude + "<br>" +
+                 "Longitude : " + longitude ; 
+              variable3.innerHTML ="";
+              variable3.innerHTML =
+                 "Franchise       : " + franchise + "<br>" +
+                 "FOS Name        : " + fosname + "<br>" + 
+                 "<br>" +
+                 "CTOPUP No       : " + ctopno + "<br>" +
+                 "Alternate No    : " + altno + "<br>" +
+                 "Email ID        : " + emailid + "<br>" +
+                 "POS Name        : " + posname + "<br>" +
+                 "Gender          : " + posgend + "<br>" +
+                 "Shop Name       : " + shopname + "<br>" + 
+                 "<br>" +
+                 "Shop No         : " + shopno + "<br>" +
+                 "Street/Village  : " + street + "<br>" +
+                 "Landmark/PO     : " + landmark + "<br>" +
+                 "Locality/Tehsil : " + locality + "<br>" +
+                 "City/District   : " + city + "<br>" +
+                 "State/UT        : " + state + "<br>" +
+                 "PIN Code        : " + pincode + "<br>" +
+                 "<br>" +
+                 "Avg. Activation PM : " + activation + "<br>" +
+                 "Avg. MNP PM        : " + mnp + "<br>" +
+                 "Avg. Recharge PM   : " + recharge + "<br>" +
+                 "<br>" +
+                 "Visited By : " + visitedby ; 
+                 // document.getElementById('div5');
+                 document.getElementById('imagea').src = imagea; 
+                 document.getElementById('imageb').src = imageb; 
+                 
+         alert(ctopno + " " + "updated successfully"); 
+       };  
+       request.onerror = function(event) {
+          alert(ctopno + " " + "already exist");
+       }; 
+      } else {} 
     }
     
     function remove() { 
