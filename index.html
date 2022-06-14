@@ -772,7 +772,34 @@
     '<input type="text" class="input" id="visitedby" placeholder="Visited By"> Visited By' + 
     '<input type="button" class="input" id="preview" value="Preview" onclick="preview()" style="margin-left:80px;">' + 
     '</p> ' ;
-      doc1.insertAdjacentHTML('afterbegin', child1);
+      doc1.insertAdjacentHTML('afterbegin', child1); 
+      
+      document.getElementById('demo2').innerHTML = 
+        "Latitude :" + latitude + 
+        "<br>" +
+        "longitude :" + longitude;
+      document.getElementById("franchise").value = franchise; 
+      document.getElementById("fosname").value = fosname; 
+      document.getElementById("ctopno").value = ctopno; 
+      document.getElementById("altno").value = altno; 
+      document.getElementById("emailid").value = emailid; 
+      document.getElementById("posname").value = posname; 
+      document.getElementById("posgend").value = poshend; 
+      document.getElementById("shopname").value = shopname; 
+      document.getElementById("shopno").value = shopno; 
+      document.getElementById("street").value = street; 
+      document.getElementById("landmark").value = landmark;
+      document.getElementById("locality").value = locality;
+      document.getElementById("city").value = city; 
+      document.getElementById("state").value = state; 
+      document.getElementById("pincode").value = pincode; 
+      document.getElementById("activation").value = activation; 
+      document.getElementById("mnp").value = mnp; 
+      document.getElementById("recharge").value = recharge; 
+      document.getElementById("visitedby").value = visitedby; 
+      areaMap(latitude, longitude); 
+      document.getElementById("imagea").src = imagea; 
+      document.getElementById("imageb").src = imageb; 
     } 
     
     function update() {
