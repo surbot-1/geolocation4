@@ -333,6 +333,7 @@
     
     var togglecoords = true; 
     var togglemap = true; 
+    var togglereadall = true; 
     
     var previewready = true; 
     var cordsreadready = true; 
@@ -653,6 +654,8 @@
     } 
     
     function readAll() { 
+        if (togglereadall) { 
+            togglereadall = falae; 
             variable6.innerHTML =""; 
             variable6.innerHTML += 
             "All POS(Point Of Sale)" + "<br>";
@@ -732,7 +735,11 @@
                   "Total POS Count = " + (serialno-1); 
                   // alert("No more entries!");
                }
-            };
+            }; 
+        } else if (!togglereadall) { 
+          togglereadall = true; 
+          document.getElementById("demo6").innerHTML = 
+        }
     } 
     
     function edit() { 
