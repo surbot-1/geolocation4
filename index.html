@@ -494,7 +494,7 @@
         saveready = true; 
         readready = false; 
         removeready = true; 
-        time = getDateTime("12h"); 
+        time = getDateTime("12h").datetime; 
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
@@ -813,7 +813,7 @@
         saveready = true; 
         readready = false; 
         removeready = true; 
-        time = getDateTime("12h"); 
+        time = getDateTime("12h").datetime; 
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .put({ 
