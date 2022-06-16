@@ -329,7 +329,9 @@
     var visitedby; 
     var areamap; 
     var imagea; 
-    var imageb; 
+    var imageb;
+    var remark; 
+    var time; 
     
     var togglecoords = true; 
     var togglemap = true; 
@@ -492,6 +494,7 @@
         saveready = true; 
         readready = false; 
         removeready = true; 
+        time = getDateTime("12h"); 
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .add({ 
@@ -518,7 +521,9 @@
            visitedby: visitedby, 
            areamap: areamap, 
            imagea: imagea, 
-           imageb: imageb 
+           imageb: imageb, 
+           remark: remark, 
+           time: time
        }); 
        request.onsuccess = function(event) { 
               variable2.innerHTML ="";
@@ -808,6 +813,7 @@
         saveready = true; 
         readready = false; 
         removeready = true; 
+        time = getDateTime("12h"); 
         var request = db.transaction(["posbsnl"], "readwrite")
        .objectStore("posbsnl")
        .put({ 
@@ -834,7 +840,9 @@
            visitedby: visitedby, 
            areamap: areamap, 
            imagea: imagea, 
-           imageb: imageb 
+           imageb: imageb, 
+           remark: remark, 
+           time: time
        }); 
        request.onsuccess = function(event) { 
               variable2.innerHTML ="";
