@@ -1083,7 +1083,6 @@ function removeB() {
   
                 <script> 
                 function getDateTime(h) { 
-                     // var ampm=true, sec=false; 
                      var datetime; var date; var time;
                      var  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
@@ -1098,16 +1097,23 @@ function removeB() {
                      hours = hours % 12; 
                      hours = hours ? hours : 12 ; hours = hours<10 ? "0"+hours : hours;
                      date = day +"."+ month +"."+ year ;
-                     time = hours +":"+ minutes +" "+ part ;
+                     time = hours +":"+ minutes +" "+ part ; 
+                     datetime = date +" "+ time ; 
                             /* if(sec) {   
                                 date = day +"."+ month +"."+ year ;
                                 time = hours +":"+ minutes +":"+ seconds +" "+ part  +" "+ gmt ;
                                 } */
                       } else if (h=="24h") {
                               date = day +"."+ month +"."+ year ;
-                              time = hours +":"+ minutes +":"+ seconds +" "+ gmt ;
-                      }
-                      return datetime = date +" "+ time ; 
+                              time = hours +":"+ minutes +":"+ seconds +" "+ gmt ; 
+                              datetime = date +" "+ time ; 
+                      } 
+                      var obj = { 
+                        date: date, 
+                        time: time, 
+                        datetime: datetime
+                      }; 
+                      return obj; 
                  } 
                  </script> 
 
