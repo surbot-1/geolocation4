@@ -230,61 +230,61 @@
   </p> 
   </div> 
   
-  <div class="posinfo" id="div5">
-    <div class="image" id="div6">
+  <div class='posinfo' id='div5'>
+    <div class='image' id='div6'>
     </div>
-    <div class="image" id="div7">
+    <div class='image' id='div7'>
     </div>
-    <div class="image" id="div8">
+    <div class='image' id='div8'>
     </div>
   </div>
     
   </div> 
   
-  <div class="div10" id="div10">
-  <div class="image10" id="div10a">  
-    <input type="button" id="buttona" value="Capture" onclick="captureA()"> 
-    <input type="button" id="fsbuttona" value=" Fullscreen " onclick="fullscreenA()"> 
-    <input type="button" id="removea" value="Remove" onclick="removeA()">
-    <input type="file" id="filea" onchange="previewFileA()" style="display:none;"><br>
-    <img id="imagea" src="" width="520">
+  <div class='div10' id='div10'>
+  <div class='image10' id='div10a'>  
+    <input type='button' id='buttona' value='Capture' onclick='captureA()'> 
+    <input type='button' id='fsbuttona' value='Fullscreen' onclick='fullscreenA()'> 
+    <input type='button' id='removea' value='Remove' onclick='removeA()'>
+    <input type='file' id='filea' onchange='previewFileA()' style='display:none;'><br>
+    <img id='imagea' src='' width='520'>
   </div> 
-  <div class="image10" id="div10b"> 
-    <input type="button" id="buttonb" value="Capture" onclick="captureB()"> 
-    <input type="button" id="fsbuttonb" value=" Fullscreen " onclick="fullscreenB()"> 
-    <input type="button" id="removeb" value="Remove" onclick="removeB()">
-    <input type="file" id="fileb" onchange="previewFileB()" style="display:none"><br>
-    <img id="imageb" src="" width="520">
+  <div class='image10' id='div10b'> 
+    <input type='button' id='buttonb' value='Capture' onclick='captureB()'> 
+    <input type='button' id='fsbuttonb' value='Fullscreen' onclick='fullscreenB()'> 
+    <input type='button' id='removeb' value='Remove' onclick='removeB()'>
+    <input type='file' id='fileb' onchange='previewFileB()' style='display:none;'><br>
+    <img id='imageb' src='' width='520'>
   </div> 
   </div> 
   
-  <div class="div11" id="div11"> 
+  <div class='div11' id='div11'> 
       Accuracy of geolocation depends on device. Recommended device - Apple's iPhone. 
       We respect our client's privacy. We do not store or share client's information. <br>
       This is an experimental project devoloped by editApp-a step ahead and owned by J S Patel. 
   </div> 
   
-  <p class="p4" id="demo4"></p> 
-  <p class="p5" id="demo5"></p> 
-  <p class="p6" id="demo6"></p> 
+  <p class='p4' id='p4'></p> 
+  <p class='p5' id='p5'></p> 
+  <p class='p6' id='p6'></p> 
      
-  <script src="https://maps.google.com/maps/api/js?sensor=false"></script> 
+  <script src='https://maps.google.com/maps/api/js?sensor=false'></script> 
   
-  <script type = "text/javascript"> 
+  <script type = 'text/javascript'> 
          
-         //prefixes of implementation that we want to test
+         /* prefixes of implementation that we want to test */ 
          window.indexedDB = window.indexedDB || window.mozIndexedDB || 
          window.webkitIndexedDB || window.msIndexedDB;
          
-         //prefixes of window.IDB objects
+         /* prefixes of window.IDB objects */ 
          window.IDBTransaction = window.IDBTransaction || 
          window.webkitIDBTransaction || window.msIDBTransaction;
          window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
          window.msIDBKeyRange; 
          
          if (!window.indexedDB) {
-            window.alert("Your browser doesn't support a stable version of IndexedDB."); 
-         }  // else { alert('Ok'); } 
+            window.alert('Your browser doesn't support a stable version of IndexedDB.'); 
+         }  /* else { alert('Ok'); } */ 
     
          var db; 
          openDB(); 
