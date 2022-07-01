@@ -963,7 +963,7 @@
         } 
       } else if(!togglemap) { 
         togglemap = true; 
-        document.getElementById('div5').innerHTML = ""; 
+        document.getElementById('div5').innerHTML = ''; 
       }
     function showLoc(pos) {
       var latt = pos.coords.latitude;
@@ -978,32 +978,34 @@
         }, 
       };
       var mapg = new google.maps.Map(
-        document.getElementById("div5"),
+        document.getElementById('div5'),
         OPTions 
       );
       var markerg = new google.maps.Marker({
         position: lattlong,
         map: mapg,
-        title: "You are here!",
+        title: 'You are here!',
       }); 
     } 
     function errHand(err) {
       switch (err.code) {
         case err.PERMISSION_DENIED:
-          result.innerHTML =
-            "The application doesn't have the permission" +
-            "to make use of location services";
+          document.getElementById('p1').innerHTML =
+            'The application does not have the permission' +
+            'to make use of location services';
           break;
         case err.POSITION_UNAVAILABLE:
-          result.innerHTML = "The location of the device is uncertain";
+          document.getElementById('p1').innerHTML = 
+          'The location of the device is uncertain';
           break;
         case err.TIMEOUT:
-          result.innerHTML = "The request to get user location timed out";
+          document.getElementById('p1').innerHTML = 
+          'The request to get user location timed out';
           break;
         case err.UNKNOWN_ERROR:
-          result.innerHTML =
-            "Time to fetch location information exceeded" +
-            "the maximum timeout interval";
+          document.getElementById('p1').innerHTML =
+            'Time to fetch location information exceeded' +
+            'the maximum timeout interval';
           break;
       }
      }
@@ -1012,8 +1014,8 @@
 function areaMap(latitude, longitude) { 
    showLoc(); 
    function showLoc(pos) {
-      // latt = pos.coords.latitude;
-      // long = pos.coords.longitude; 
+      /* latt = pos.coords.latitude;
+       long = pos.coords.longitude; */ 
       var latt = latitude; 
       var long = longitude; 
       var lattlong = new google.maps.LatLng(latt, long);
@@ -1026,27 +1028,27 @@ function areaMap(latitude, longitude) {
         }, 
       };
       var mapg = new google.maps.Map(
-        document.getElementById("div5"),
+        document.getElementById('div5'),
         OPTions 
       );
       var markerg = new google.maps.Marker({
         position: lattlong,
         map: mapg,
-        title: "You are here!",
+        title: 'You are here!',
       }); 
    } 
 }
   
 function captureA() { 
   document.getElementById('filea').click(); 
-  // var ele = document.getElementById('filea'); 
-  // ele.addEventListener('change', 'previewFileA');
+  /* var ele = document.getElementById('filea'); 
+   ele.addEventListener('change', 'previewFileA'); */ 
 } 
    
 function captureB() { 
   document.getElementById('fileb').click(); 
-  // var ele = document.getElementById('fileb'); 
-  // ele.addEventListener('change', 'previewFileB');
+  /* var ele = document.getElementById('fileb'); 
+   ele.addEventListener('change', 'previewFileB'); */ 
 } 
     
 function previewFileA() {
@@ -1054,7 +1056,7 @@ function previewFileA() {
   var file = document.getElementById('filea').files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
-    // convert image file to base64 string 
+    /* convert image file to base64 string */ 
     preview.src = reader.result; 
     imagea = reader.result; 
   }, false);
@@ -1068,7 +1070,7 @@ function previewFileB() {
   var file = document.querySelector('#fileb').files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
-    // convert image file to base64 string
+    /* convert image file to base64 string */ 
     preview.src = reader.result; 
     imageb = reader.result; 
   }, false);
@@ -1078,13 +1080,13 @@ function previewFileB() {
 } 
   
 function removeA() { 
-  imagea = ""; 
-  document.getElementById('imagea').src = ""; 
+  imagea = ''; 
+  document.getElementById('imagea').src = ''; 
 } 
     
 function removeB() { 
-  imageb = ""; 
-  document.getElementById('imageb').src = ""; 
+  imageb = ''; 
+  document.getElementById('imageb').src = ''; 
 }
     
 </script> 
@@ -1099,22 +1101,22 @@ function removeB() {
                      var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
-                     var gmt = "+0530"
-                     if(h="12h") { 
+                     var gmt = '+0530'
+                     if(h='12h') { 
                      var part = hours < 12 ? 'AM' : 'PM' ;
                      hours = hours % 12; 
-                     hours = hours ? hours : 12 ; hours = hours<10 ? "0"+hours : hours;
-                     date = day +"."+ month +"."+ year ;
-                     time = hours +":"+ minutes +" "+ part ; 
-                     datetime = date +" "+ time ; 
+                     hours = hours ? hours : 12 ; hours = hours<10 ? '0'+hours : hours;
+                     date = day +'.'+ month +'.'+ year ;
+                     time = hours +':'+ minutes +' '+ part ; 
+                     datetime = date +' '+ time ; 
                             /* if(sec) {   
-                                date = day +"."+ month +"."+ year ;
-                                time = hours +":"+ minutes +":"+ seconds +" "+ part  +" "+ gmt ;
+                                date = day +'.'+ month +'.'+ year ;
+                                time = hours +':'+ minutes +':'+ seconds +" "+ part  +" "+ gmt ;
                                 } */
-                      } else if (h=="24h") {
-                              date = day +"."+ month +"."+ year ;
-                              time = hours +":"+ minutes +":"+ seconds +" "+ gmt ; 
-                              datetime = date +" "+ time ; 
+                      } else if (h=='24h') {
+                              date = day +'.'+ month +'.'+ year ;
+                              time = hours +':'+ minutes +':'+ seconds +' '+ gmt ; 
+                              datetime = date +' '+ time ; 
                       } 
                       var obj = { 
                         date: date, 
@@ -1122,7 +1124,7 @@ function removeB() {
                         datetime: datetime
                       }; 
                       return obj; 
-                 }  // document.getElementById("demo6").innerHTML = getDateTime("12h").datetime; 
+                 } 
                  </script> 
 
 </body>
