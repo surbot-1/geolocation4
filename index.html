@@ -289,17 +289,17 @@
          var db; 
          openDB(); 
       function openDB() {
-         var request = window.indexedDB.open("posbsnldb", 1); 
+         var request = window.indexedDB.open('posbsnldb', 1); 
          request.onerror = function(event) {
-            alert("error: ");
+            alert('error:');
          }; 
          request.onsuccess = function(event) {
             db = request.result;
-            // alert("success: "+ db);
+            /* alert("success: "+ db); */ 
          }; 
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("posbsnl", {keyPath: "ctopno"}); 
+            var objectStore = db.createObjectStore('osbsnl', {keyPath: 'ctopno'}); 
             objectStore.createIndex('shopname', 'shopname', { unique: false });
          }; 
       }
@@ -348,14 +348,7 @@
   </script> 
   
   
-  <script>
-
-    var variable1 = document.getElementById("demo1")
-    var variable2 = document.getElementById("demo2"); 
-    var variable3 = document.getElementById("demo3"); 
-    var variable4 = document.getElementById("demo4"); 
-    var variable5 = document.getElementById("demo5"); 
-    var variable6 = document.getElementById("demo6"); 
+  <script> 
     
     function getCoordinates() {
       if (togglecoords) { 
