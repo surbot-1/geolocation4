@@ -752,62 +752,62 @@
     } 
     
     function edit() { 
-      document.getElementById('demo3').innerHTML = ""; 
+      document.getElementById('demo3').innerHTML = ''; 
       var doc1 = document.getElementById('demo3'); 
       var child1 = 
-    '<input type="text" class="input" id="franchise" placeholder="Franchise Name and Code"> Franchise Name and Code <br>' + 
-    '<input type="text" class="input" id="fosname" placeholder="FOS Name and Code"> FOS Name and Code <br>' +                         
-    '<br>' + 
-    '<input type="text" class="input" id="ctopno" placeholder="CTOPUP No."> CTOPUP No. <br>' + 
-    '<input type="text" class="input" id="altno" placeholder="Alternate No."> Alternate No. <br>' + 
-    '<input type="text" class="input" id="emailid" placeholder="Email ID"> Email ID <br>' + 
-    '<input type="text" class="input" id="posname" placeholder="POS Name"> POS Name <br>' + 
-    '<input type="text" class="input" id="posgend" placeholder="Gender"> Gender <br>' + 
-    '<input type="text" class="input" id="shopname" placeholder="Shop Name"> Shop Name <br>' + 
-    '<br>' + 
-    '<input type="text" class="input" id="shopno" placeholder="Shop No."> Shop No. <br>' + 
-    '<input type="text" class="input" id="street" placeholder="Street/Village"> Street/Village <br>' + 
-    '<input type="text" class="input" id="landmark" placeholder="Landmark/PO"> LandmarkP/PO <br>' + 
-    '<input type="text" class="input" id="locality" placeholder="Locality/Tehsil"> Locality/Tehsil <br>' +
-    '<input type="text" class="input" id="city" placeholder="City/District"> City/District <br>' + 
-    '<input type="text" class="input" id="state" placeholder="State/UT"> State/UT <br>' + 
-    '<input type="text" class="input" id="pincode" placeholder="PIN Code"> PIN Code <br>' + 
-    '<br>' + 
-    '<input type="text" class="input" id="activation" placeholder="Avg. Activation PM"> Avg. Activation PM <br>' + 
-    '<input type="text" class="input" id="mnp" placeholder="Avg. MNP PM "> Avg. MNP PM <br>' + 
-    '<input type="text" class="input" id="recharge" placeholder="Avg. Recharge PM"> Avg. Recharge PM <br>' + 
-    '<br>' +
-    '<input type="text" class="input" id="visitedby" placeholder="Visited By"> Visited By' + 
-    '<input type="button" class="input" id="preview" value="Preview" onclick="preview()" style="margin-left:80px;">' + 
-    '</p> ' ;
+    "<input type='text' class='input' id='franchise' placeholder='Franchise Name and Code'> Franchise Name and Code <br>" + 
+    "<input type='text' class='input' id='fosname' placeholder='FOS Name and Code'> FOS Name and Code <br>" +                         
+    "<br>" + 
+    "<input type='text' class='input' id='ctopno' placeholder='CTOPUP No.'> CTOPUP No. <br>" + 
+    "<input type='text' class='input' id='altno' placeholder='Alternate No.'> Alternate No. <br>" + 
+    "<input type='text' class='input' id='emailid' placeholder='Email ID'> Email ID <br>" + 
+    "<input type='text' class='input' id='posname' placeholder='POS Name'> POS Name <br>" + 
+    "<input type='text' class='input' id='posgend' placeholder='Gender'> Gender <br>" + 
+    "<input type='text' class='input' id='shopname' placeholder='Shop Name'> Shop Name <br>" + 
+    "<br>" + 
+    "<input type='text' class='input' id='shopno' placeholder='Shop No.'> Shop No. <br>" + 
+    "<input type='text' class='input' id='street' placeholder='Street/Village'> Street/Village <br>" + 
+    "<input type='text' class='input' id='landmark' placeholder='Landmark/PO'> LandmarkP/PO <br>" + 
+    "<input type='text' class='input' id='locality' placeholder='Locality/Tehsil'> Locality/Tehsil <br>" +
+    "<input type='text' class='input' id='city' placeholder='City/District'> City/District <br>" + 
+    "<input type='text' class='input' id='state' placeholder='State/UT'> State/UT <br>" + 
+    "<input type='text' class='input' id='pincode' placeholder='PIN Code'> PIN Code <br>" + 
+    "<br>" + 
+    "<input type='text' class='input' id='activation' placeholder='Avg. Activation PM'> Avg. Activation PM <br>" + 
+    "<input type='text' class='input' id='mnp' placeholder='Avg. MNP PM'> Avg. MNP PM <br>' + 
+    "<input type='text' class='input' id='recharge' placeholder='Avg. Recharge PM'> Avg. Recharge PM <br>" + 
+    "<br>" +
+    "<input type='text' class='input' id='visitedby' placeholder='Visited By'> Visited By' + 
+    "<input type='button' class='input' id='preview' value='Preview' onclick='preview()' style='margin-left:80px;'>" + 
+    "</p>" ;
       doc1.insertAdjacentHTML('afterbegin', child1); 
       
       document.getElementById('demo2').innerHTML = 
-        "Latitude :" + latitude + 
-        "<br>" +
-        "longitude :" + longitude;
-      document.getElementById("franchise").value = franchise; 
-      document.getElementById("fosname").value = fosname; 
-      document.getElementById("ctopno").value = ctopno; 
-      document.getElementById("altno").value = altno; 
-      document.getElementById("emailid").value = emailid; 
-      document.getElementById("posname").value = posname; 
-      document.getElementById("posgend").value = poshend; 
-      document.getElementById("shopname").value = shopname; 
-      document.getElementById("shopno").value = shopno; 
-      document.getElementById("street").value = street; 
-      document.getElementById("landmark").value = landmark;
-      document.getElementById("locality").value = locality;
-      document.getElementById("city").value = city; 
-      document.getElementById("state").value = state; 
-      document.getElementById("pincode").value = pincode; 
-      document.getElementById("activation").value = activation; 
-      document.getElementById("mnp").value = mnp; 
-      document.getElementById("recharge").value = recharge; 
-      document.getElementById("visitedby").value = visitedby; 
+        'Latitude :' + latitude + 
+        '<br>' +
+        'longitude :' + longitude;
+      document.getElementById('franchise').value = franchise; 
+      document.getElementById('fosname').value = fosname; 
+      document.getElementById('ctopno').value = ctopno; 
+      document.getElementById('altno').value = altno; 
+      document.getElementById('emailid').value = emailid; 
+      document.getElementById('posname').value = posname; 
+      document.getElementById('posgend').value = poshend; 
+      document.getElementById('shopname').value = shopname; 
+      document.getElementById('shopno').value = shopno; 
+      document.getElementById('street').value = street; 
+      document.getElementById('landmark').value = landmark;
+      document.getElementById('locality').value = locality;
+      document.getElementById('city').value = city; 
+      document.getElementById('state').value = state; 
+      document.getElementById('pincode').value = pincode; 
+      document.getElementById('activation').value = activation; 
+      document.getElementById('mnp').value = mnp; 
+      document.getElementById('recharge').value = recharge; 
+      document.getElementById('visitedby').value = visitedby; 
       areaMap(latitude, longitude); 
-      document.getElementById("imagea").src = imagea; 
-      document.getElementById("imageb").src = imageb; 
+      document.getElementById('imagea').src = imagea; 
+      document.getElementById('imageb').src = imageb; 
     } 
     
     function update() {
@@ -1095,12 +1095,12 @@ function removeB() {
                 function getDateTime(h) { 
                      var datetime; var date; var time;
                      var  today = new Date();
-                     var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
-                     var month = today.getMonth() < 9 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
-                     var year   = today.getFullYear() < 10 ? "0" + today.getFullYear() : today.getFullYear() ;    
-                     var hours   = today.getHours() < 10 ? "0" + today.getHours() : today.getHours() ;
-                     var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
-                     var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
+                     var day   = today.getDate() < 10 ? '0' + today.getDate() : today.getDate() ; 
+                     var month = today.getMonth() < 9 ? '0' + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
+                     var year   = today.getFullYear() < 10 ? '0' + today.getFullYear() : today.getFullYear() ;    
+                     var hours   = today.getHours() < 10 ? '0' + today.getHours() : today.getHours() ;
+                     var minutes   = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes() ;     
+                     var seconds   = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds() ; 
                      var gmt = '+0530'
                      if(h='12h') { 
                      var part = hours < 12 ? 'AM' : 'PM' ;
@@ -1111,7 +1111,7 @@ function removeB() {
                      datetime = date +' '+ time ; 
                             /* if(sec) {   
                                 date = day +'.'+ month +'.'+ year ;
-                                time = hours +':'+ minutes +':'+ seconds +" "+ part  +" "+ gmt ;
+                                time = hours +':'+ minutes +':'+ seconds +' '+ part  +' '+ gmt ;
                                 } */
                       } else if (h=='24h') {
                               date = day +'.'+ month +'.'+ year ;
